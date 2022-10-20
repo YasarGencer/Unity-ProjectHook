@@ -1,8 +1,7 @@
 # Unity-ProjectHook
 
 MEKANIKLER
-
----------
+-------------------------------------------------------
 
 tek elle oynanacak.
 
@@ -53,7 +52,7 @@ platformların rastgele oluşumu.
 
 
 TASARIM
-----
+---------------------------------------------------
 
 Güç deişimi okun içinde.
 
@@ -61,8 +60,7 @@ Bırakıldığında ok yok olur.
 
 
 MENULER
-
---------
+-------------------------------------------------------------------------
 
 ana menu
 
@@ -72,7 +70,6 @@ olme menusu
 
 
 SES
-
 ----
 
 
