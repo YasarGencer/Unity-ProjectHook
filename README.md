@@ -19,7 +19,7 @@
 
  - Kamera yukarı doğru ilerleyecek. Eğer oyuncu kameranın altında kalırsa oyun bitecek.
 
-## tuzaklı platformlar
+## Tuzaklı Platformlar
 
   - Uzun süre üstünde durunca kırılan platform.
   
@@ -51,15 +51,29 @@
 
 ## Ana Menu
 
+- Oyna Butonu
+- Ses Tuşu
+- Müzik Tuşu
+- Emeği Geçenler           
+
 ## Durdurma Menusu
 
+- Devam Tuşu
+- Ses Tuşu
+- Müzik Tuşu
+
 ## Ölme Menusu
+- Puan
+- Yeniden Oyna
+- Ana Menüye Dön
 
+# SES
 
-SES
-
-----
-
+- Müzik
+- Kanca Sesi
+- Platforma Çarpma Sesi
+- Karakterin Zıplama ve Platforma İnme Sesi
+- Buton Tıklama Sesleri
 
 
 
