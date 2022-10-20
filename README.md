@@ -28,9 +28,9 @@
 
 ## Power Uplar
 
-  Kancanın gücünü arttıran powerup.
+  - Kancanın gücünü arttıran powerup.
   
-  Hızlıca yukarı çıkartan powerup.
+  - Hızlıca yukarı çıkartan powerup.
   
 ## Oyun Akışı
 - Kanca bir hedefi tutturamadığında bekleme süresine girecek.
