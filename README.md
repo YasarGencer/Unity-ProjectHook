@@ -1,75 +1,63 @@
 # Unity-ProjectHook
 
-MEKANIKLER
--------------------------------------------------------
+# MEKANIKLER
 
-tek elle oynanacak.
+- Oyun tek elle tıklanarak oynanacak
 
-hareket{
+## Hareket
 
-  oyuncunun üzerinde rastgele hareket eden yön oku.
+ - Oyuncunun üzerinde belli bir açı arasında gidip gelen ok olacak.
   
-  basılı tutma durumunda güç artıp azalışı.
+ - Basılı tutulduğunda ok sabit kalacak ve içerisinde gücü belli eden bir bar artıp azalacak.
   
-  bıraktığında kanca fırlatma
+ - Bırakıldığında kanca atılacak.
   
-  kanca tutnunması ve platforma çıkma.
+ - Kanca isabet ederse ettiği platformun üstüne çıkacak.
   
+
+## Ölme Durumu
+
+ - Kamera yukarı doğru ilerleyecek. Eğer oyuncu kameranın altında kalırsa oyun bitecek.
+
+## tuzaklı platformlar
+
+  - Uzun süre üstünde durunca kırılan platform.
   
-}
-
-kamera{
-
-  kamera yukarı hareketi.
+  - Üstünde testere gezen platform.
   
-  kameranın altında kalınca ölme.
+
+## Power Uplar
+
+  Kancanın gücünü arttıran powerup.
   
+  Hızlıca yukarı çıkartan powerup.
   
-}
+## Oyun Akışı
+- Kanca bir hedefi tutturamadığında bekleme süresine girecek.
 
-tuzaklı platformlar{
-
-  uzun süre durunca kırılan platform.
-  
-  üstünded testere gezen platform.
-  
-}
-
-power-up{
-
-  kanca gücü artırma.
-  
-  yukarı çıkartan.
-  
-  
-  
-}
+- Platformlar rastgele oluşacak.
 
 
-duvara ya da boşluğa atılınca bekleme süresi.
+# TASARIM
 
-platformların rastgele oluşumu.
-
-
-TASARIM
----------------------------------------------------
-
-Güç deişimi okun içinde.
-
-Bırakıldığında ok yok olur.
+## Karakter
+## Çevre
+## Kanca
+## Powerups
 
 
-MENULER
--------------------------------------------------------------------------
+# MENULER
 
-ana menu
 
-durdurma menusu
+## Ana Menu
 
-olme menusu
+## Durdurma Menusu
+
+## Ölme Menusu
 
 
 SES
+
 ----
 
 
