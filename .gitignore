@@ -3,3 +3,8 @@ ProjectHook/ProjectSettings/SceneTemplateSettings.json
 ProjectHook/UserSettings/EditorUserSettings.asset
 ProjectHook/UserSettings/EditorUserSettings.asset
 *.asset
+ProjectHook/UserSettings/EditorUserSettings.asset
+*.dwlt
+*.dwlt
+ProjectHook/UserSettings/Layouts/default-2022.dwlt
+*.asset

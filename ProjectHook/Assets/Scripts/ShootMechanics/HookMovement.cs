@@ -5,20 +5,26 @@ using UnityEngine;
 public class HookMovement : MonoBehaviour
 {
     private ArrowDirection arrowDirection;
-    private Rigidbody2D rb;
+    private bool canMove = false;
     void Start()
     {
         arrowDirection = GameObject.Find("GameManager").GetComponent<ArrowDirection>();
-        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(InputController.currentPhase == 3)
+        if (InputController.GetTouchPhase() == TouchPhase.Began || InputController.GetTouchPhase() == TouchPhase.Stationary)
+            canMove = true;
+        if (canMove)
         {
-            Debug.Log("Girdi");
-            rb.AddForce(arrowDirection.GetArrowDirection());
+            transform.Translate(arrowDirection.GetArrowDirection() * Time.deltaTime * 2f);
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Platform"))
+            canMove = false;
     }
 }

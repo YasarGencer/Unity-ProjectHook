@@ -12,15 +12,14 @@ public class ArrowMovement : MonoBehaviour
 
     private void Update()
     {
-        if(InputController.currentPhase == 1 || InputController.currentPhase == 2)
+        if(InputController.GetTouchPhase() == TouchPhase.Began || InputController.GetTouchPhase() == TouchPhase.Stationary)
             StopRotatingArrow();
     }
 
     public void RotateArrow()
     {
         // Sonsuz çalýþmasý için tek sefer çalýþtýrýlmalý.
-        var tween = gameObject.transform.DORotate(new Vector3(0, 0, -45f), 1f).SetEase(Ease.InOutCubic).SetLoops(-1, LoopType.Yoyo);
-
+        var tween = gameObject.transform.DORotate(new Vector3(0, 0, -45f), 2f).SetEase(Ease.InOutCubic).SetLoops(-1, LoopType.Yoyo);
     }
 
     public void StopRotatingArrow()
