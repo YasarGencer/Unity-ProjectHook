@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CameraMovement : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class CameraMovement : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         currentMultiplier = 1 / speedMultiplierAmount;
         StartCoroutine(Multiplier());
+        StartCoroutine(StartSpeed(camSpeed));
+
     }
     private void Update()
     {
@@ -28,5 +31,14 @@ public class CameraMovement : MonoBehaviour
         currentMultiplier *= speedMultiplierAmount;
         yield return new WaitForSecondsRealtime(speedMultiplierTimer);
         StartCoroutine(Multiplier());
+    }
+    IEnumerator StartSpeed(float value)
+    {
+        camSpeed = 0;
+        if(SceneManager.GetActiveScene().name != "Mainmenu")
+            yield return new WaitForSeconds(2.5f);
+        else
+            yield return new WaitForSeconds(0);
+        camSpeed = value;
     }
 }
