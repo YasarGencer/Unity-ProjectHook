@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2873232010053024192}
   - component: {fileID: 2873232010053024195}
   - component: {fileID: 2873232010053024194}
+  - component: {fileID: 3334704260747663933}
   m_Layer: 0
   m_Name: Tilemap
   m_TagString: Untagged
@@ -230,6 +231,39 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &3334704260747663933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2873232010053024220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -2.0001135, y: 0.0064110756, z: 0}
+  - {x: -1.9382118, y: 0.08058691, z: 0}
+  - {x: -1.9332846, y: 0.17420387, z: 0}
+  - {x: -1.9825567, y: 0.21854877, z: 0}
+  - {x: -1.969122, y: 0.42604876, z: 0}
+  - {x: 1.9532151, y: 0.41449118, z: 0}
+  - {x: 1.9838523, y: 0.23333025, z: 0}
+  - {x: 1.9148713, y: 0.1495676, z: 0}
+  - {x: 1.9148713, y: 0.0608778, z: 0}
+  - {x: 1.9988499, y: 0.0058293343, z: 0}
+  m_ShapePathHash: -880868836
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -75910
 --- !u!1 &2873232010905553107
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,7 +295,7 @@ Transform:
   m_Children:
   - {fileID: 2873232010053024221}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!156049354 &2873232010905553104
 Grid:
