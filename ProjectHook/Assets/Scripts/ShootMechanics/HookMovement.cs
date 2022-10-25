@@ -6,9 +6,9 @@ public class HookMovement : MonoBehaviour
 {
     private Transform playerTransform;
     private ArrowDirection arrowDirection;
-
     private Vector3 direction;
 
+    [SerializeField] private float hookSpeed = 2f;
     void Start()
     {
         playerTransform = GameObject.Find("Player").GetComponent<Transform>();
@@ -19,9 +19,8 @@ public class HookMovement : MonoBehaviour
     void Update()
     {
         if (GameManager.hookCanMove)
-        {
             Move();
-        }
+
         if ((InputController.GetTouchPhase() == TouchPhase.Began || InputController.GetTouchPhase() == TouchPhase.Stationary) && GameManager.canThrowHook)
         {
             GameManager.hookCanMove = true;
@@ -31,7 +30,7 @@ public class HookMovement : MonoBehaviour
     }
     private void Move()
     {
-        transform.Translate(direction * Time.deltaTime * 2f);
+        transform.Translate(direction * Time.deltaTime * hookSpeed);
     }
     
     public void ResetPosition()

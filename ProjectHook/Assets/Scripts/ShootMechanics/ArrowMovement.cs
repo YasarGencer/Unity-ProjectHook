@@ -6,30 +6,22 @@ using DG.Tweening;
 public class ArrowMovement : MonoBehaviour
 {
     private bool isRotating = false;
-    private ArrowAndRangeDisplay arrowAndRangeDisplay;
+    [SerializeField] private float maxDegree = 45f;
+    [SerializeField] private float rotationDuration = 2f;
 
-    private void Start()
-    {
-        arrowAndRangeDisplay = GameObject.Find("GameManager").GetComponent<ArrowAndRangeDisplay>();
-
-    }
     private void Update()
     {
         if (GameManager.canThrowHook)
         {
-            arrowAndRangeDisplay.DisplayArrowAndRange();
             StartRotation();
         }
         else
-        {
-            StopRotation();
-            arrowAndRangeDisplay.HideArrowAndRange();
-        }
+            if(isRotating)
+                StopRotation();
     }
     private void RotateArrow()
     {
-        // Sonsuz çalýþmasý için tek sefer çalýþtýrýlmalý.
-        var tween = gameObject.transform.DORotate(new Vector3(0, 0, -45f), 2f).SetEase(Ease.InOutCubic).SetLoops(-1, LoopType.Yoyo);
+        gameObject.transform.DORotate(new Vector3(0, 0, -maxDegree), rotationDuration).SetEase(Ease.InOutCubic).SetLoops(-1, LoopType.Yoyo);
     }
 
     public void StartRotation()
@@ -42,12 +34,14 @@ public class ArrowMovement : MonoBehaviour
     }
     private void ResetArrowRotation()
     {
-        gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 45));
+        gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, maxDegree));
     }
 
     public void StopRotation()
     {
         DOTween.Clear();
+        Debug.Log("RotationKilled");
+
         Invoke("ResetArrowRotation", 0.1f);
         isRotating = false;
     }

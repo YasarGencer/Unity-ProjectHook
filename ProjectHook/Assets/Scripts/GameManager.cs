@@ -6,12 +6,6 @@ public class GameManager : MonoBehaviour
 {
     public static bool canThrowHook = true;
     public static bool hookCanMove = true;
+    public static bool isPlayerMoving = false;
 
-    private void Start()
-    {
-    }
-    private void Update()
-    {
-        
-    }
 }

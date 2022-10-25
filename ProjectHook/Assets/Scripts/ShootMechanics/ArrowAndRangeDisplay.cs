@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class ArrowAndRangeDisplay : MonoBehaviour 
 {
-    [SerializeField] private GameObject arrowAndRange;
+    [SerializeField] private GameObject arrowSprite;
+    [SerializeField] private GameObject rangeSprite;
 
+    private void Update()
+    {
+        if (GameManager.canThrowHook)
+            DisplayArrowAndRange();
+        else
+            HideArrowAndRange();
+
+    }
     public void DisplayArrowAndRange()
     {
-        arrowAndRange.SetActive(true);
+        arrowSprite.SetActive(true);
+        rangeSprite.SetActive(true);
     }
 
     public void HideArrowAndRange()
     {
-        arrowAndRange.SetActive(false);
+        arrowSprite.SetActive(false);
+        rangeSprite.SetActive(false);
     }
 }
