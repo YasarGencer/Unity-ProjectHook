@@ -4,29 +4,28 @@ using UnityEngine;
 
 public class HookMovement : MonoBehaviour
 {
+    private Transform playerTransform;
     private ArrowDirection arrowDirection;
-    private GameManager gameManager;
-    private bool canMove = false;
 
     private Vector3 direction;
 
     void Start()
     {
+        playerTransform = GameObject.Find("Player").GetComponent<Transform>();
         arrowDirection = GameObject.Find("GameManager").GetComponent<ArrowDirection>();
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (canMove)
+        if (GameManager.hookCanMove)
         {
             Move();
         }
-        if ((InputController.GetTouchPhase() == TouchPhase.Began || InputController.GetTouchPhase() == TouchPhase.Stationary) && gameManager.canThrowHook)
+        if ((InputController.GetTouchPhase() == TouchPhase.Began || InputController.GetTouchPhase() == TouchPhase.Stationary) && GameManager.canThrowHook)
         {
-            canMove = true;
-            gameManager.canThrowHook = false;
+            GameManager.hookCanMove = true;
+            GameManager.canThrowHook = false;
             direction = arrowDirection.GetArrowDirection();
         }
     }
@@ -34,12 +33,9 @@ public class HookMovement : MonoBehaviour
     {
         transform.Translate(direction * Time.deltaTime * 2f);
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    
+    public void ResetPosition()
     {
-        if (collision.collider.CompareTag("Platform"))
-        {
-            canMove = false;
-            gameManager.canThrowHook = true;
-        }
+        transform.position = playerTransform.position;
     }
 }

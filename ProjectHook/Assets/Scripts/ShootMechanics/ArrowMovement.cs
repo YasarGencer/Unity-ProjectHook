@@ -6,13 +6,33 @@ using DG.Tweening;
 public class ArrowMovement : MonoBehaviour
 {
     private bool isRotating = false;
+    private ArrowAndRangeDisplay arrowAndRangeDisplay;
+
+    private void Start()
+    {
+        arrowAndRangeDisplay = GameObject.Find("GameManager").GetComponent<ArrowAndRangeDisplay>();
+
+    }
+    private void Update()
+    {
+        if (GameManager.canThrowHook)
+        {
+            arrowAndRangeDisplay.DisplayArrowAndRange();
+            StartRotation();
+        }
+        else
+        {
+            StopRotation();
+            arrowAndRangeDisplay.HideArrowAndRange();
+        }
+    }
     private void RotateArrow()
     {
         // Sonsuz çalýþmasý için tek sefer çalýþtýrýlmalý.
         var tween = gameObject.transform.DORotate(new Vector3(0, 0, -45f), 2f).SetEase(Ease.InOutCubic).SetLoops(-1, LoopType.Yoyo);
     }
 
-    public void StartRotating()
+    public void StartRotation()
     {
         if (!isRotating)
         {

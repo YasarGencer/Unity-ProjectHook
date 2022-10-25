@@ -5,29 +5,22 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private GameObject player;
-    [SerializeField] private GameObject platform;
-    private bool canMove = false;
-    public void GoToPlatform()
-    {
-        var position = new Vector3(transform.position.x, platform.transform.position.y + platform.transform.lossyScale.y / 2 + player.transform.lossyScale.y / 2, 0);
-        transform.DOMove(position, 1f);
-    }
+    private GameObject hook;
 
-    public void Move()
+    private void Start()
     {
-        if (canMove)
-        {
-            GoToPlatform();
-            canMove = false;
-            Invoke("StopMoving", 1f);
-        }
+        hook = GameObject.Find("Hook");
+    }
+    public void GoToPlatform(GameObject platform)
+    {
+        var position = new Vector3(hook.transform.position.x, platform.transform.position.y + platform.transform.lossyScale.y / 2 + transform.lossyScale.y / 2, 0);
+        transform.DOMove(position, 1f);
+        Invoke("StopMoving", 1.5f);
     }
 
     private void StopMoving()
     {
         DOTween.Clear();
-        canMove = true;
     }
 
 }
