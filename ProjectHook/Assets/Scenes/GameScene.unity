@@ -8915,7 +8915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3493cc2008bb174a940dbcf868ac1cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camSpeed: 1
+  camSpeed: 4
   speedMultiplierAmount: 1.1
   speedMultiplierTimer: 10
 --- !u!114 &1124287125
@@ -13792,7 +13792,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 1124287123}
   parallaxEffect: 0.5
-  length: 32
+  length: 16
 --- !u!483693784 &1294412524
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -18507,7 +18507,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 1124287123}
   parallaxEffect: 0
-  length: 32
+  length: 16
 --- !u!66 &1459458405
 CompositeCollider2D:
   m_ObjectHideFlags: 0
