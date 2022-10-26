@@ -760,8 +760,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxDegree: 45
+<<<<<<< Updated upstream
   rotationDuration: 2
 --- !u!1 &295202983
+=======
+  rotationDuration: 1
+--- !u!1 &307296838
+>>>>>>> Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
