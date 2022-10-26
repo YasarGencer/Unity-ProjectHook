@@ -21,7 +21,7 @@ public class ArrowMovement : MonoBehaviour
     }
     private void RotateArrow()
     {
-        gameObject.transform.DORotate(new Vector3(0, 0, -maxDegree), rotationDuration).SetEase(Ease.InOutCubic).SetLoops(-1, LoopType.Yoyo);
+        gameObject.transform.DORotate(new Vector3(0, 0, -maxDegree), rotationDuration).SetEase(Ease.InOutSine).SetLoops(-1, LoopType.Yoyo);
     }
 
     public void StartRotation()
