@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformList:
   - {fileID: 2873232010905553107, guid: 6d70350a699ea9b4a9832c4abf5e08f1, type: 3}
-  - {fileID: 2873232010905553107, guid: 6d70350a699ea9b4a9832c4abf5e08f1, type: 3}
-  - {fileID: 2873232010905553107, guid: 6d70350a699ea9b4a9832c4abf5e08f1, type: 3}
+  - {fileID: 2873232010905553107, guid: 15464b5188f9d654bb54fb329cd7970a, type: 3}
+  - {fileID: 2873232010905553107, guid: 5e59bd8b7bd6a8e4b8e5671e7df21bae, type: 3}
   detailsList:
   - {fileID: 1888605178837268, guid: e18055fbe150b8c4aabcb10d06858eea, type: 3}
   - {fileID: 1888605178837268, guid: e18055fbe150b8c4aabcb10d06858eea, type: 3}

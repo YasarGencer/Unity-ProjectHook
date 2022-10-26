@@ -1462,8 +1462,8 @@ MonoBehaviour:
   platformManager: {fileID: 11400000, guid: a23fdbe6a85f50d479703e0295aa4eff, type: 2}
   spawnParent: {fileID: 907127385}
   spawnType: 0
-  inBetweenTime: 5
-  verticalRange: {x: 1.5, y: 2.5}
+  inBetweenTime: 0.2
+  verticalRange: {x: 2.5, y: 4.5}
   HorizontalRange: {x: -2, y: 2}
   range: 25
 --- !u!4 &528185591
