@@ -5,21 +5,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Platform List", menuName = "PlatformList")]
 public class PlatformManager : ScriptableObject
 {
-    [SerializeField] List<Platform> platformList;
-    Platform GetPlatform(int value)
-    {
-        if (platformList.Count <= value)
-            return new Platform();
-        else
-            return platformList[value];
-    }
-    int GetRandomPlatformID() { return Random.Range(0, platformList.Count); } 
-    //bu fonksiyon dýþardan çaðýrýlýr diðer fonksiyonlar bu fonksiyonun parametresizz çaðýrýlabilmesi için var
-    public Platform GetRandomPlatform() { return GetPlatform(GetRandomPlatformID()); }
-}
+    [SerializeField] List<GameObject> platformList;
+    [SerializeField] List<GameObject> detailsList;
+    public GameObject GetRandom(List<GameObject> list) { return list[Random.Range(0, list.Count)]; }
 
-[System.Serializable]
-public struct Platform
-{
-    public GameObject platform;
+    public List<GameObject> GetPlatformList() { return platformList; }
+    public List<GameObject> GetDetailsList() { return detailsList; }
 }

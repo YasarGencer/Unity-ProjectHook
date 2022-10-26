@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: Main-PlatformList
   m_EditorClassIdentifier: 
   platformList:
-  - platform: {fileID: 2873232010905553107, guid: 6d70350a699ea9b4a9832c4abf5e08f1, type: 3}
-  - platform: {fileID: 2873232010905553107, guid: 6d70350a699ea9b4a9832c4abf5e08f1, type: 3}
-  - platform: {fileID: 2873232010905553107, guid: 6d70350a699ea9b4a9832c4abf5e08f1, type: 3}
+  - {fileID: 2873232010905553107, guid: 6d70350a699ea9b4a9832c4abf5e08f1, type: 3}
+  - {fileID: 2873232010905553107, guid: 6d70350a699ea9b4a9832c4abf5e08f1, type: 3}
+  - {fileID: 2873232010905553107, guid: 6d70350a699ea9b4a9832c4abf5e08f1, type: 3}
+  detailsList:
+  - {fileID: 1888605178837268, guid: e18055fbe150b8c4aabcb10d06858eea, type: 3}
+  - {fileID: 1888605178837268, guid: e18055fbe150b8c4aabcb10d06858eea, type: 3}
+  - {fileID: 1888605178837268, guid: e18055fbe150b8c4aabcb10d06858eea, type: 3}
