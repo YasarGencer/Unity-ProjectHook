@@ -8,8 +8,6 @@
 
  - Oyuncunun üzerinde belli bir açı arasında gidip gelen ok olacak.
   
- - Basılı tutulduğunda ok sabit kalacak ve içerisinde gücü belli eden bir bar artıp azalacak.
-  
  - Bırakıldığında kanca atılacak.
   
  - Kanca isabet ederse ettiği platformun üstüne çıkacak.
