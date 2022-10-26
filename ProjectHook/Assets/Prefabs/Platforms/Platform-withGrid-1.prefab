@@ -49,7 +49,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 3
-      m_TileSpriteIndex: 0
+      m_TileSpriteIndex: 2
       m_TileMatrixIndex: 0
       m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
@@ -96,12 +96,12 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: eef859e546aa4e344829c5d95ad2eb16, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 1
-    m_Data: {fileID: 21300256, guid: cf57b3e7835b02e4493371d9bc259b1b, type: 3}
-  - m_RefCount: 2
-    m_Data: {fileID: 21300258, guid: cf57b3e7835b02e4493371d9bc259b1b, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 2
+    m_Data: {fileID: 21300258, guid: cf57b3e7835b02e4493371d9bc259b1b, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300256, guid: cf57b3e7835b02e4493371d9bc259b1b, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300260, guid: cf57b3e7835b02e4493371d9bc259b1b, type: 3}
   m_TileMatrixArray:
@@ -261,19 +261,17 @@ MonoBehaviour:
   m_SelfShadows: 0
   m_ApplyToSortingLayers: 00000000
   m_ShapePath:
-  - {x: -2.0001135, y: 0.0064110756, z: 0}
-  - {x: -1.9382118, y: 0.08058691, z: 0}
-  - {x: -1.9332846, y: 0.17420387, z: 0}
-  - {x: -1.9825567, y: 0.21854877, z: 0}
-  - {x: -1.969122, y: 0.42604876, z: 0}
-  - {x: 1.9532151, y: 0.41449118, z: 0}
-  - {x: 1.9838523, y: 0.23333025, z: 0}
-  - {x: 1.9148713, y: 0.1495676, z: 0}
-  - {x: 1.9148713, y: 0.0608778, z: 0}
-  - {x: 1.9988499, y: 0.0058293343, z: 0}
-  m_ShapePathHash: -880868836
+  - {x: -1.831173, y: 0.009900838, z: 0}
+  - {x: -2.0059903, y: 0.13179223, z: 0}
+  - {x: -2.0047724, y: 0.30539167, z: 0}
+  - {x: -1.9650829, y: 0.3533431, z: 0}
+  - {x: 1.9504867, y: 0.34900767, z: 0}
+  - {x: 1.9974947, y: 0.2906283, z: 0}
+  - {x: 1.9939972, y: 0.13046825, z: 0}
+  - {x: 1.8330169, y: -0.0046057105, z: 0}
+  m_ShapePathHash: -1033509082
   m_Mesh: {fileID: 0}
-  m_InstanceId: 31278
+  m_InstanceId: 47730
 --- !u!1 &2873232010905553107
 GameObject:
   m_ObjectHideFlags: 0
