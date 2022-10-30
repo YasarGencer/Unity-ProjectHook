@@ -42,7 +42,7 @@ public class ArrowMovement : MonoBehaviour
         DOTween.Clear();
         Debug.Log("RotationKilled");
 
-        Invoke("ResetArrowRotation", 0.1f);
+        Invoke("ResetArrowRotation", 0.99f);
         isRotating = false;
     }
 
