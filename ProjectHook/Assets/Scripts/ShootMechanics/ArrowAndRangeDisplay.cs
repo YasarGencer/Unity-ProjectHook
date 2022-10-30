@@ -5,7 +5,7 @@ using UnityEngine;
 public class ArrowAndRangeDisplay : MonoBehaviour 
 {
     [SerializeField] private GameObject arrowSprite;
-    [SerializeField] private GameObject rangeSprite;
+    //[SerializeField] private GameObject rangeSprite;
 
     private void Update()
     {
@@ -18,12 +18,12 @@ public class ArrowAndRangeDisplay : MonoBehaviour
     public void DisplayArrowAndRange()
     {
         arrowSprite.SetActive(true);
-        rangeSprite.SetActive(true);
+        //rangeSprite.SetActive(true);
     }
 
     public void HideArrowAndRange()
     {
         arrowSprite.SetActive(false);
-        rangeSprite.SetActive(false);
+        //rangeSprite.SetActive(false);
     }
 }
