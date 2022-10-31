@@ -10,11 +10,13 @@ public class MainMenu : MonoBehaviour
     Animator gameAnimator;
 
     public TextMeshProUGUI highMark, lowMark;
+    public Slider music, sfx;
 
     private void Start()
     {
         gameAnimator = GetComponentInParent<Animator>() as Animator;
-        GetSelectedGraphics();
+        GetSelectedGraphics(); 
+        GetAudio();
     }
 
     public void StartButton()
@@ -65,5 +67,18 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetInt("Graphics", 1);
         highMark.text = "x";
         lowMark.text = "";
+    }
+    public void GetAudio()
+    {
+        music.value = PlayerPrefs.GetFloat("music", 0.5f);
+        sfx.value = PlayerPrefs.GetFloat("sfx", 0.5f);
+    }
+    public void SetMusic()
+    {
+        PlayerPrefs.SetFloat("music", music.value);
+    }
+    public void SetSFX()
+    {
+        PlayerPrefs.SetFloat("sfx", sfx.value);
     }
 }
