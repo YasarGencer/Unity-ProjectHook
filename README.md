@@ -8,10 +8,11 @@
 
  - Oyuncunun üzerinde belli bir açı arasında gidip gelen ok olacak.
   
- - Bırakıldığında kanca atılacak.
+ - Ekrana tıklandığında kanca atılacak.
   
  - Kanca isabet ederse ettiği platformun üstüne çıkacak.
   
+ - Kanca menzili sınırlı olacak.
 
 ## Ölme Durumu
 
@@ -23,7 +24,8 @@
   
   - Üstünde testere gezen platform.
   
-
+  - Hareket eden platform.
+  
 ## Power Uplar
 
   - Kancanın gücünü arttıran powerup.
@@ -31,6 +33,7 @@
   - Hızlıca yukarı çıkartan powerup.
   
 ## Oyun Akışı
+
 - Kanca bir hedefi tutturamadığında bekleme süresine girecek.
 
 - Platformlar rastgele oluşacak.
