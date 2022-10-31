@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     }
     public void GoToPlatform(GameObject platform)
     {
-        var position = new Vector3(hook.transform.position.x, platform.transform.position.y + platform.transform.lossyScale.y / 2 + transform.lossyScale.y / 2, 0);
+        var position = new Vector3(hook.transform.position.x, platform.transform.position.y + 0.45f , 0);
         transform.DOMove(position, moveDuration);
         Invoke("StopMoving", moveDuration + .2f);
     }
