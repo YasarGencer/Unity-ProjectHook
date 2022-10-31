@@ -6,18 +6,13 @@ using UnityEngine;
 
 public class HookCollideDetector : MonoBehaviour
 {
-    private PlayerMovement playerMovement;
-
-    private void Start()
-    {
-        playerMovement = GameObject.Find("Player").GetComponent<PlayerMovement>();
-    }
+    public Collision2D currentCollision;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Platform"))
         {
-            GameManager.hookCanMove = false;
-            playerMovement.GoToPlatform(collision.collider.gameObject);
+            GameManager.currentGamePhase = GameManager.GamePhases.HOOKHITS;
+            currentCollision = collision;
         }
     }
 }

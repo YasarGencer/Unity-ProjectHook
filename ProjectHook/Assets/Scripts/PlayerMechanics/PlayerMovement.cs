@@ -21,7 +21,6 @@ public class PlayerMovement : MonoBehaviour
     public void GoToPlatform(GameObject platform)
     {
         var position = new Vector3(hook.transform.position.x, platform.transform.position.y + platform.transform.lossyScale.y / 2 + transform.lossyScale.y / 2, 0);
-        GameManager.isPlayerMoving = true;
         transform.DOMove(position, moveDuration);
         Invoke("StopMoving", moveDuration + .2f);
     }
@@ -30,10 +29,9 @@ public class PlayerMovement : MonoBehaviour
     {
         DOTween.Clear();
         Debug.Log("MovingKilled");
-        GameManager.isPlayerMoving = false;  
-        GameManager.canThrowHook = true;
         hookMovement.ResetPosition();
         arrowMovement.ResetArrowRotation();
+        GameManager.currentGamePhase = GameManager.GamePhases.PLAYERLOCATES;
     }
 
 }
