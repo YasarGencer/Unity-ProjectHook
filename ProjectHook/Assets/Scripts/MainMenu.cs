@@ -19,6 +19,18 @@ public class MainMenu : MonoBehaviour
     }
     public void LoadScene()
     {
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("YasarScene");
+    }
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+    public void SettingsOpen()
+    {
+        gameAnimator.SetTrigger("SettOpen");
+    }
+    public void SettingsClose()
+    {
+        gameAnimator.SetTrigger("SettClose");
     }
 }

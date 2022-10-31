@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameScene.unity
     guid: c0e626b2c5db6aa4f959c27cd8f396fa
+  - enabled: 1
+    path: Assets/Scenes/YasarScene.unity
+    guid: 0e629dfb5cd12c34bb6918bb24ff58d1
   m_configObjects: {}
