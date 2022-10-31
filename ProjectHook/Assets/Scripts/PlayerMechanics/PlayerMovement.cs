@@ -7,12 +7,14 @@ public class PlayerMovement : MonoBehaviour
 {
     private GameObject hook;
     private HookMovement hookMovement;
+    private ArrowMovement arrowMovement;
 
     [SerializeField] private float moveDuration = 1f;
 
     private void Start()
     {
         hook = GameObject.Find("Hook");
+        arrowMovement = GameObject.Find("Arrow").GetComponent<ArrowMovement>();
         hookMovement = hook.GetComponent<HookMovement>();
 
     }
@@ -28,9 +30,10 @@ public class PlayerMovement : MonoBehaviour
     {
         DOTween.Clear();
         Debug.Log("MovingKilled");
-        GameManager.isPlayerMoving = false;
+        GameManager.isPlayerMoving = false;  
         GameManager.canThrowHook = true;
         hookMovement.ResetPosition();
+        arrowMovement.ResetArrowRotation();
     }
 
 }

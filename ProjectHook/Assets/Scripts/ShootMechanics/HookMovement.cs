@@ -23,7 +23,6 @@ public class HookMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (GameManager.hookCanMove)
             Move();
         else

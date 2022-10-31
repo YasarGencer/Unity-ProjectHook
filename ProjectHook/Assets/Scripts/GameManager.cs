@@ -6,6 +6,6 @@ public class GameManager : MonoBehaviour
 {
     public static bool canThrowHook = true;
     public static bool hookCanMove = false;
-    public static bool isPlayerMoving = false;
+    public static bool isPlayerMoving = false; // Herhangi bir yerde çaðrýlmýyor kaldýrýlabilir ileride.
 
 }

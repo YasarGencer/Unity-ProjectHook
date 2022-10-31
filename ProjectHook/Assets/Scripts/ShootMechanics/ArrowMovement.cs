@@ -12,9 +12,7 @@ public class ArrowMovement : MonoBehaviour
     private void Update()
     {
         if (GameManager.canThrowHook)
-        {
             StartRotation();
-        }
         else
             if(isRotating)
                 StopRotation();
@@ -32,7 +30,7 @@ public class ArrowMovement : MonoBehaviour
             isRotating = true;
         }
     }
-    private void ResetArrowRotation()
+    public void ResetArrowRotation()
     {
         gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, maxDegree));
     }
@@ -42,7 +40,6 @@ public class ArrowMovement : MonoBehaviour
         DOTween.Clear();
         Debug.Log("RotationKilled");
 
-        Invoke("ResetArrowRotation", 0.99f);
         isRotating = false;
     }
 
