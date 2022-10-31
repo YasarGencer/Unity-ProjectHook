@@ -255,13 +255,14 @@ MonoBehaviour:
   - {x: -2.0059903, y: 0.13179223, z: 0}
   - {x: -2.0047724, y: 0.30539167, z: 0}
   - {x: -1.9650829, y: 0.3533431, z: 0}
-  - {x: 0.9331665, y: 0.35536593, z: 0}
-  - {x: 1.0034717, y: 0.3027749, z: 0}
-  - {x: 0.997412, y: 0.13402651, z: 0}
-  - {x: 0.8029803, y: 0.0017525405, z: 0}
-  m_ShapePathHash: -743705625
+  - {x: 0.9469676, y: 0.35822183, z: 0}
+  - {x: 0.9891892, y: 0.30596453, z: 0}
+  - {x: 0.99315405, y: 0.13280332, z: 0}
+  - {x: 0.93226564, y: 0.07307738, z: 0}
+  - {x: 0.81432855, y: -0.018953443, z: 0}
+  m_ShapePathHash: -1179348976
   m_Mesh: {fileID: 0}
-  m_InstanceId: 124676
+  m_InstanceId: 125206
 --- !u!1 &2873232010905553107
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,8 +273,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2873232010905553105}
   - component: {fileID: 2873232010905553104}
+  - component: {fileID: 8999704540046999700}
   m_Layer: 0
-  m_Name: Platform-withGrid-1
+  m_Name: MovingPlatform-withGrid-1
   m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -307,3 +309,17 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &8999704540046999700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2873232010905553107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37453abd6c0d49e48868b3128db7721d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  range: 1
