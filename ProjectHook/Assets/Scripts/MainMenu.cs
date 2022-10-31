@@ -2,14 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 
 public class MainMenu : MonoBehaviour
 {
     Animator gameAnimator;
 
+    public TextMeshProUGUI highMark, lowMark;
+
     private void Start()
     {
         gameAnimator = GetComponentInParent<Animator>() as Animator;
+        GetSelectedGraphics();
     }
 
     public void StartButton()
@@ -40,5 +45,25 @@ public class MainMenu : MonoBehaviour
     public void InfoClose()
     {
         gameAnimator.SetTrigger("InfoClose");
+    }
+
+    public void GetSelectedGraphics()
+    {
+        if (PlayerPrefs.GetInt("Graphics", 0) == 0)
+            SelectLowGraphics();
+        else
+            SelectHighGraphics();
+    }
+    public void SelectLowGraphics()
+    {
+        PlayerPrefs.SetInt("Graphics", 0);
+        highMark.text = "";
+        lowMark.text = "x";
+    }
+    public void SelectHighGraphics()
+    {
+        PlayerPrefs.SetInt("Graphics", 1);
+        highMark.text = "x";
+        lowMark.text = "";
     }
 }
