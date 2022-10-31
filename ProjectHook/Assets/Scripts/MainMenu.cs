@@ -33,4 +33,12 @@ public class MainMenu : MonoBehaviour
     {
         gameAnimator.SetTrigger("SettClose");
     }
+    public void InfoOpen()
+    {
+        gameAnimator.SetTrigger("InfoOpen");
+    }
+    public void InfoClose()
+    {
+        gameAnimator.SetTrigger("InfoClose");
+    }
 }
