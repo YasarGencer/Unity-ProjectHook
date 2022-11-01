@@ -9,7 +9,8 @@ public class PauseMenu : MonoBehaviour
     Animator anim;
     Slider sfx, music;
     GameObject cam;
-    float camSpeed = 0;
+    float camSpeed = 0, scoreMultiplier;
+    public static bool isPaused = false;
     void Start()
     {
         cam = GameObject.Find("Main Camera");
@@ -23,11 +24,16 @@ public class PauseMenu : MonoBehaviour
         camSpeed = cam.GetComponent<CameraMovement>().GetSpeed();
         cam.GetComponent<CameraMovement>().SetSpeed(0);
 
-        //skor sayacý durdur
+        scoreMultiplier = ScoreManager.scoreMultiplier;
+        ScoreManager.scoreMultiplier = 0;
+
+        isPaused = true;
     }
     public void Unpause()
     {
         cam.GetComponent<CameraMovement>().SetSpeed(camSpeed);
+        ScoreManager.scoreMultiplier = scoreMultiplier;
+        isPaused = false;
     }
     public void Back()
     {

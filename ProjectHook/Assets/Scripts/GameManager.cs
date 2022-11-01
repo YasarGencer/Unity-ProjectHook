@@ -45,8 +45,11 @@ public class GameManager : MonoBehaviour
             hookSpriteTransform.rotation = arrow.transform.rotation;
             if (InputController.GetTouchPhase() == TouchPhase.Began || InputController.GetTouchPhase() == TouchPhase.Stationary)
             {
-                currentGamePhase = GamePhases.SHOOT;
-                direction = arrowDirection.GetArrowDirection();
+                if(PauseMenu.isPaused == false && Camera.main.ScreenToViewportPoint(Input.GetTouch(0).position).y < 0.75)
+                {
+                    currentGamePhase = GamePhases.SHOOT;
+                    direction = arrowDirection.GetArrowDirection();
+                }
             }
         }
         
