@@ -29,8 +29,8 @@ public class PlayerMovement : MonoBehaviour
     {
         DOTween.Clear();
         Debug.Log("MovingKilled");
-        hookMovement.ResetPosition();
-        arrowMovement.ResetArrowRotation();
+        
+       
         GameManager.currentGamePhase = GameManager.GamePhases.PLAYERLOCATES;
     }
 
