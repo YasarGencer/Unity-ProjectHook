@@ -14,5 +14,9 @@ public class HookCollideDetector : MonoBehaviour
             GameManager.currentGamePhase = GameManager.GamePhases.HOOKHITS;
             currentCollision = collision;
         }
+        if (collision.collider.CompareTag("Walls"))
+        {
+            GameManager.currentGamePhase = GameManager.GamePhases.HOOKMISSES;
+        }
     }
 }
