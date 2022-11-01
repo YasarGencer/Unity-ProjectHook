@@ -8,7 +8,7 @@ using TMPro;
 public class PauseMenu : MonoBehaviour
 {
     Animator anim;
-    Slider sfx, music;
+    [SerializeField] Slider sfx, music;
     GameObject cam;
     float camSpeed = 0, scoreMultiplier;
     public static bool isPaused = false;

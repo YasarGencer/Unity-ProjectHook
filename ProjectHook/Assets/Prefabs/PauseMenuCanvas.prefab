@@ -2182,8 +2182,8 @@ RectTransform:
   - {fileID: 560276630607629287}
   - {fileID: 560276631268402875}
   - {fileID: 560276632370257330}
-  - {fileID: 560276631623330764}
   - {fileID: 560276631495825904}
+  - {fileID: 560276631623330764}
   - {fileID: 560276632205274005}
   - {fileID: 560276630925898740}
   m_Father: {fileID: 560276631905686623}
@@ -2602,7 +2602,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 540, y: -1489}
+  m_AnchoredPosition: {x: 540, y: -1286.3}
   m_SizeDelta: {x: 680.9, y: 103.899994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &560276631495825906
@@ -2840,7 +2840,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 540, y: -1286.2998}
+  m_AnchoredPosition: {x: 540, y: -1489}
   m_SizeDelta: {x: 680.9, y: 103.899994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &560276631623330766
@@ -3246,6 +3246,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35d875f04ca911742a3630c6f0176046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfx: {fileID: 560276631485651844}
+  music: {fileID: 560276631502484792}
   scoreText: {fileID: 560276631313700088}
   hscoreText: {fileID: 560276632314600682}
 --- !u!95 &560276631905686593
