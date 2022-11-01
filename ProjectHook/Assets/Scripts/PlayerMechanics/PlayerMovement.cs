@@ -32,7 +32,6 @@ public class PlayerMovement : MonoBehaviour
         hookMovement.ResetPosition();
         arrowMovement.ResetArrowRotation();
         GameManager.currentGamePhase = GameManager.GamePhases.PLAYERLOCATES;
-        ScoreManager.ScoreBonus();
     }
 
 }
