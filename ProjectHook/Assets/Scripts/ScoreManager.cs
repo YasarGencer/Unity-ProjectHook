@@ -5,7 +5,7 @@ using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
-    public static string highscoreT = "highScore", scoreT = "score";
+    public static string highscoreT = "highScore";
     public static float score = 0;
     public static float scoreMultiplier = 1;
     

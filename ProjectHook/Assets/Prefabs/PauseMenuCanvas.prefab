@@ -2554,8 +2554,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+      - m_Target: {fileID: 560276631905686622}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: SetSFX
         m_Mode: 1
         m_Arguments:
@@ -2792,8 +2792,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+      - m_Target: {fileID: 560276631905686622}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: SetMusic
         m_Mode: 1
         m_Arguments:
@@ -3165,7 +3165,7 @@ RectTransform:
   m_Children:
   - {fileID: 560276631364287528}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3246,6 +3246,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35d875f04ca911742a3630c6f0176046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreText: {fileID: 560276631313700088}
+  hscoreText: {fileID: 560276632314600682}
 --- !u!95 &560276631905686593
 Animator:
   serializedVersion: 4

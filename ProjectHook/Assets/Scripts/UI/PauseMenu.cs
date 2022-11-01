@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class PauseMenu : MonoBehaviour
     GameObject cam;
     float camSpeed = 0, scoreMultiplier;
     public static bool isPaused = false;
+    [SerializeField] TextMeshProUGUI scoreText, hscoreText;
     void Start()
     {
         cam = GameObject.Find("Main Camera");
@@ -21,13 +23,19 @@ public class PauseMenu : MonoBehaviour
     }
     public void Pause()
     {
+        //PAUSE
         camSpeed = cam.GetComponent<CameraMovement>().GetSpeed();
         cam.GetComponent<CameraMovement>().SetSpeed(0);
 
         scoreMultiplier = ScoreManager.scoreMultiplier;
         ScoreManager.scoreMultiplier = 0;
 
+        //SET VALUES
         isPaused = true;
+        scoreText.text = ((int)ScoreManager.score).ToString();
+        hscoreText.text = PlayerPrefs.GetInt(ScoreManager.highscoreT, 0).ToString();
+
+        GetAudio();
     }
     public void Unpause()
     {
