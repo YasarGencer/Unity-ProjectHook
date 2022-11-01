@@ -21,10 +21,11 @@ public class CameraMovement : MonoBehaviour
     }
     private void Update()
     {
-        if (player.transform.position.y > this.transform.position.y)
-            this.transform.position = new Vector3(this.transform.position.x, player.transform.position.y, this.transform.position.z);
-        else
-            transform.Translate(Vector3.up * Time.deltaTime * camSpeed * currentMultiplier);
+        if (player)
+            if (player.transform.position.y > this.transform.position.y)
+                this.transform.position = new Vector3(this.transform.position.x, player.transform.position.y, this.transform.position.z);
+            else
+                transform.Translate(Vector3.up * Time.deltaTime * camSpeed * currentMultiplier);
     }
     IEnumerator Multiplier()
     {
@@ -40,5 +41,13 @@ public class CameraMovement : MonoBehaviour
         else
             yield return new WaitForSeconds(0);
         camSpeed = value;
+    }
+    public float GetSpeed()
+    {
+        return camSpeed;
+    }
+    public void SetSpeed(float speed)
+    {
+        camSpeed = speed;
     }
 }

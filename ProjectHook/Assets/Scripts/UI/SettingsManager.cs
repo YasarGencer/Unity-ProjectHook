@@ -5,6 +5,7 @@ using UnityEngine.Rendering.Universal;
 
 public class SettingsManager : MonoBehaviour
 {
+    [SerializeField] GameObject pause;
     [SerializeField] GameObject postProcessing;
     [SerializeField] GameObject[] lights;
     private void Start()
@@ -20,5 +21,9 @@ public class SettingsManager : MonoBehaviour
                     item.SetActive(false);
             }
         }
+    }
+    public void Pause()
+    {
+        Instantiate(pause);
     }
 }
