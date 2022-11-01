@@ -2,21 +2,25 @@
 
 # MEKANIKLER
 
-- Oyun tek elle tıklanarak oynanacak
+- Oyun tek elle tıklanarak oynanacak / ✓
 
 ## Hareket
 
- - Oyuncunun üzerinde belli bir açı arasında gidip gelen ok olacak.
+ - Oyuncunun üzerinde belli bir açı arasında gidip gelen ok olacak. / ✓
   
- - Ekrana tıklandığında kanca atılacak.
+ - Ekrana tıklandığında kanca atılacak. / ✓
   
- - Kanca isabet ederse ettiği platformun üstüne çıkacak.
+ - Kanca isabet ederse ettiği platformun üstüne çıkacak. / ✓
   
  - Kanca menzili sınırlı olacak.
+ 
+ - Kanca duvara çarparsa oyuncuya geri dönecek.
 
 ## Ölme Durumu
 
- - Kamera yukarı doğru ilerleyecek. Eğer oyuncu kameranın altında kalırsa oyun bitecek.
+ - Kamera yukarı doğru hızlanarak ilerleyecek. / ✓
+ 
+ - Eğer oyuncu kameranın altında kalırsa oyun bitecek.
 
 ## Tuzaklı Platformlar
 
@@ -26,6 +30,14 @@
   
   - Hareket eden platform.
   
+ ## Skor sistemi
+   
+  - Zamanla artan skor.
+  
+  - Her başarılı atışta ekstra skor
+  
+  - Art arda başarılı atışlarda skor katlayıcı
+  
 ## Power Uplar
 
   - Kancanın gücünü arttıran powerup.
@@ -34,15 +46,15 @@
   
 ## Oyun Akışı
 
-- Kanca bir hedefi tutturamadığında bekleme süresine girecek.
+ - Kanca bir hedefi tutturamadığında bekleme süresine girecek.
 
-- Platformlar rastgele oluşacak.
-
+ - Platformlar rastgele oluşacak. / ✓
 
 # TASARIM
 
 ## Karakter
 ## Çevre
+ - Orta çağ kale stili assetler / ✓
 ## Kanca
 ## Powerups
 
@@ -50,30 +62,45 @@
 # MENULER
 
 
-## Ana Menu
+## Ana Menu / ✓
 
-- Oyna Butonu
-- Ses Tuşu
-- Müzik Tuşu
-- Emeği Geçenler           
+- Oyna Butonu  / ✓
 
-## Durdurma Menusu
+- Ayarlar: / ✓
+   - Ses efektleri / ✓
+   - Müzik / ✓
+   - Grafik / ✓
+   
+- Emeği Geçenler  / ✓       
 
-- Devam Tuşu
-- Ses Tuşu
-- Müzik Tuşu
+## Durdurma Menusu / ✓
+
+- Devam Tuşu / ✓
+
+- Ses Tuşu / ✓
+
+- Müzik Tuşu / ✓
+
+- Skor ve yüksekskor ekranı / ✓
 
 ## Ölme Menusu
+
 - Puan
+
 - Yeniden Oyna
+
 - Ana Menüye Dön
 
 # SES
 
 - Müzik
+
 - Kanca Sesi
+
 - Platforma Çarpma Sesi
+
 - Karakterin Zıplama ve Platforma İnme Sesi
+
 - Buton Tıklama Sesleri
 
 
