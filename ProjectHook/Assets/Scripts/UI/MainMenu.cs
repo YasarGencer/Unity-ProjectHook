@@ -11,6 +11,7 @@ public class MainMenu : MonoBehaviour
 
     public TextMeshProUGUI highMark, lowMark;
     public Slider music, sfx;
+    public GameObject postProcessing;
 
     private void Start()
     {
@@ -61,12 +62,14 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetInt("Graphics", 0);
         highMark.text = "";
         lowMark.text = "x";
+        postProcessing.SetActive(false);
     }
     public void SelectHighGraphics()
     {
         PlayerPrefs.SetInt("Graphics", 1);
         highMark.text = "x";
         lowMark.text = "";
+        postProcessing.SetActive(true);
     }
     public void GetAudio()
     {
