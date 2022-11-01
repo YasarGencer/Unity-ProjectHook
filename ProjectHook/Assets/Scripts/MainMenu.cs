@@ -22,11 +22,11 @@ public class MainMenu : MonoBehaviour
     public void StartButton()
     {
         gameAnimator.SetTrigger("StartGame");
-        Invoke("LoadScene", 3f);
+        Invoke("LoadScene", 3.5f);
     }
     public void LoadScene()
     {
-        SceneManager.LoadScene("YasarScene");
+        SceneManager.LoadScene("GameScene");
     }
     public void QuitGame()
     {
