@@ -19751,6 +19751,7 @@ GameObject:
   - component: {fileID: 1356289377}
   - component: {fileID: 1356289379}
   - component: {fileID: 1356289378}
+  - component: {fileID: 1356289380}
   m_Layer: 0
   m_Name: Score
   m_TagString: Untagged
@@ -19825,12 +19826,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 164.7
+  m_fontSize: 268.1
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 226.01
+  m_fontSizeMax: 3658
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -19875,6 +19876,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1356289376}
   m_CullTransparentMesh: 1
+--- !u!95 &1356289380
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356289376}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a016e632c82ad3544b2dd9ab1f572699, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1361024798
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,11 +16,13 @@ public class ScoreManager : MonoBehaviour
     private float maxHeight = -10;
     
     [SerializeField] TextMeshProUGUI scoreText;
+    Animator scoreAnim;
     private void Start()
     {
         InvokeRepeating("UpdateDisplayedScore", 0, 0.05f);
         playerTransform = GameObject.Find("Player").transform;
         startHeight = playerTransform.position.y;
+        scoreAnim = scoreText.gameObject.GetComponent<Animator>();
     }
     private void Update()
     {
@@ -35,8 +37,12 @@ public class ScoreManager : MonoBehaviour
 
     private void UpdateDisplayedScore()
     {
-        if(score < targetScore)
+        if(score < targetScore){
+            scoreAnim.SetBool("ScoreUp", true);
             score++;
+        }
+        else
+            scoreAnim.SetBool("ScoreUp", false);
         scoreText.text = "-- " + ((int)score).ToString() + " --";
     }
 
