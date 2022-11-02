@@ -3,14 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
-public class SettingsManager : MonoBehaviour
+public class GameUIManager : MonoBehaviour
 {
-    [SerializeField] GameObject pause;
+    [SerializeField] GameObject pause, pauseButton;
     [SerializeField] GameObject postProcessing;
     [SerializeField] GameObject[] lights;
+    
+    private void Awake() {
+        PauseMenu.isPaused = false;
+    }
     private void Start()
     {
-        if (PlayerPrefs.GetInt("Graphics", 0) == 0)
+        pauseButton.SetActive(false);
+        Invoke("PauseButton",3);
+        if (PlayerPrefs.GetInt("Graphics", 1) == 0)
         {
             postProcessing.SetActive(false);
             foreach (var item in lights)
@@ -25,5 +31,8 @@ public class SettingsManager : MonoBehaviour
     public void Pause()
     {
         Instantiate(pause);
+    }
+    public void PauseButton(){
+        pauseButton.SetActive(true);
     }
 }

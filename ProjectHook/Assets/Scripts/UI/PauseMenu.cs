@@ -9,36 +9,35 @@ public class PauseMenu : MonoBehaviour
 {
     Animator anim;
     [SerializeField] Slider sfx, music;
-    GameObject cam;
+    CameraMovement cam;
     float camSpeed = 0, scoreMultiplier;
     public static bool isPaused = false;
-    [SerializeField] TextMeshProUGUI scoreText, hscoreText;
+    [SerializeField] TextMeshProUGUI hscoreText;
     void Start()
     {
-        cam = GameObject.Find("Main Camera");
-        this.GetComponent<Canvas>().worldCamera = cam.GetComponent<Camera>();
+        cam = GameObject.Find("Main Camera").GetComponent<CameraMovement>();
         anim = GetComponent<Animator>();
         Pause();
     }
     public void Pause()
     {
         //PAUSE
-        camSpeed = cam.GetComponent<CameraMovement>().GetSpeed();
-        cam.GetComponent<CameraMovement>().SetSpeed(0);
+        camSpeed = cam.GetSpeed();
+        cam.SetSpeed(0);
 
         scoreMultiplier = ScoreManager.scoreMultiplier;
         ScoreManager.scoreMultiplier = 0;
 
         //SET VALUES
         isPaused = true;
-        scoreText.text = ((int)ScoreManager.score).ToString();
+        ScoreManager.SetHigscore();
         hscoreText.text = PlayerPrefs.GetInt(ScoreManager.highscoreT, 0).ToString();
 
         GetAudio();
     }
     public void Unpause()
     {
-        cam.GetComponent<CameraMovement>().SetSpeed(camSpeed);
+        cam.SetSpeed(camSpeed);
         ScoreManager.scoreMultiplier = scoreMultiplier;
         isPaused = false;
     }

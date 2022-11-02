@@ -10,7 +10,7 @@ public class ScoreManager : MonoBehaviour
     public static float scoreMultiplier = 5;
 
     private float targetScore = 0;
-    [SerializeField] Transform playerTransform;
+    Transform playerTransform;
     
     private float startHeight;
     private float maxHeight = -10;
@@ -37,6 +37,11 @@ public class ScoreManager : MonoBehaviour
     {
         if(score < targetScore)
             score++;
-        scoreText.text = ((int)score).ToString();
+        scoreText.text = "-- " + ((int)score).ToString() + " --";
+    }
+
+    public static void SetHigscore(){
+        if(PlayerPrefs.GetInt(highscoreT,0) < score)
+            PlayerPrefs.SetInt(highscoreT,(int)score);
     }
 }

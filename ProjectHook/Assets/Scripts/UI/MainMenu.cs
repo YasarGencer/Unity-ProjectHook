@@ -52,7 +52,7 @@ public class MainMenu : MonoBehaviour
 
     public void GetSelectedGraphics()
     {
-        if (PlayerPrefs.GetInt("Graphics", 0) == 0)
+        if (PlayerPrefs.GetInt("Graphics", 1) == 0)
             SelectLowGraphics();
         else
             SelectHighGraphics();
