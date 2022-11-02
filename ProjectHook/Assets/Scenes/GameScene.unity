@@ -38823,7 +38823,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxDegree: 45
-  rotationDuration: 2
+  rotationDuration: 1
 --- !u!1 &2082684866
 GameObject:
   m_ObjectHideFlags: 0
@@ -38973,7 +38973,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35b139dd04437084ea3335b1e2023f98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveDuration: 1
+  moveDuration: 0.8
 --- !u!95 &2116292289
 Animator:
   serializedVersion: 4

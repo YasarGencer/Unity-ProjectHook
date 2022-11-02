@@ -21,8 +21,6 @@ public class ArrowMovement : MonoBehaviour
     public void StopRotation()
     {
         DOTween.Clear();
-        Debug.Log("RotationKilled");
-
     }
 
 }

@@ -28,9 +28,6 @@ public class PlayerMovement : MonoBehaviour
     private void StopMoving()
     {
         DOTween.Clear();
-        Debug.Log("MovingKilled");
-        
-       
         GameManager.currentGamePhase = GameManager.GamePhases.PLAYERLOCATES;
     }
 

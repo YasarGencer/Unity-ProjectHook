@@ -5,15 +5,17 @@ using UnityEngine;
 public class DeathManager : MonoBehaviour
 {
     private Transform playerTransform;
-    private Transform originTransform;
+    private Transform cameraTransform;
+
+    private bool isDead = false;
     private void Start()
     {
         playerTransform = GameObject.Find("Player").transform;
-        originTransform = GameObject.Find("OriginPoint").transform;
+        cameraTransform = GameObject.Find("Main Camera").transform;
     }
     void Update()
     {
-        if (Vector3.Distance(playerTransform.position, originTransform.position) > 10f)
+        if (playerTransform.position.y < cameraTransform.position.y - 6f && !isDead)
         {
             Die();
         }
@@ -21,7 +23,7 @@ public class DeathManager : MonoBehaviour
 
     private void Die()
     {
-        // Ölüm menüsü açýlacak
         Debug.Log("Die");
+        isDead = true;
     }
 }
