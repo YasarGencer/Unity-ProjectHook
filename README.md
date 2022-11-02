@@ -25,9 +25,10 @@
   
  ## Skor sistemi
    
-  - Zamanla artan skor.
-  - Her başarılı atışta ekstra skor
-  - Art arda başarılı atışlarda skor katlayıcı
+  - Zamanla artan skor. / X
+  - Her başarılı atışta ekstra skor. / X
+  - Art arda başarılı atışlarda skor katlayıcı / X
+  - Skor yükselen mesafe ile ölçülecek / ✓
  
 ## Para ve market sistemi
 
@@ -46,7 +47,7 @@
   
 ## Oyun Akışı
 
- - Kanca bir hedefi tutturamadığında bekleme süresine girecek.
+ - Kanca bir hedefi tutturamadığında bekleme süresine girecek. / ✓
  - Platformlar rastgele oluşacak. / ✓
 
 # TASARIM
