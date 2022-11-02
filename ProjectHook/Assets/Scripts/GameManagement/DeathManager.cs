@@ -7,9 +7,10 @@ public class DeathManager : MonoBehaviour
     private Transform playerTransform;
     private Transform cameraTransform;
 
-    private bool isDead = false;
+    public static bool isDead = false;
     private void Start()
     {
+        isDead = false;
         playerTransform = GameObject.Find("Player").transform;
         cameraTransform = GameObject.Find("Main Camera").transform;
     }
@@ -23,7 +24,6 @@ public class DeathManager : MonoBehaviour
 
     private void Die()
     {
-        Debug.Log("Die");
-        isDead = true;
+        GameObject.Find("GameUIManager").GetComponent<GameUIManager>().Death();
     }
 }

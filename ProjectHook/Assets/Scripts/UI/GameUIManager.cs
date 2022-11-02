@@ -6,6 +6,7 @@ using UnityEngine.Rendering.Universal;
 public class GameUIManager : MonoBehaviour
 {
     [SerializeField] GameObject pause, pauseButton;
+    [SerializeField] GameObject death;
     [SerializeField] GameObject postProcessing;
     [SerializeField] GameObject[] lights;
     
@@ -34,5 +35,8 @@ public class GameUIManager : MonoBehaviour
     }
     public void PauseButton(){
         pauseButton.SetActive(true);
+    }
+    public void Death(){
+        Instantiate(death);
     }
 }

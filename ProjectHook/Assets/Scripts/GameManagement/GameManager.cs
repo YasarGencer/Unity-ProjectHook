@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if(DeathManager.isDead == false){
         if (currentGamePhase == GamePhases.AIM)
         {
             hookSpriteTransform.rotation = arrow.transform.rotation;
@@ -87,6 +88,7 @@ public class GameManager : MonoBehaviour
             arrowAndRangeDisplay.DisplayArrowAndRange();
             arrowMovement.StartRotation();
             currentGamePhase = GamePhases.AIM;
+        }
         }
     }
 }

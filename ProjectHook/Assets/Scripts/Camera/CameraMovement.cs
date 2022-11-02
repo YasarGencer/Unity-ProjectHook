@@ -21,12 +21,13 @@ public class CameraMovement : MonoBehaviour
     }
     private void Update()
     {
-        if (player)
+        if (player & DeathManager.isDead != true)
             if (player.transform.position.y > this.transform.position.y)
                 this.transform.position = new Vector3(this.transform.position.x, player.transform.position.y, this.transform.position.z);
             else
                 transform.Translate(Vector3.up * Time.deltaTime * camSpeed * currentMultiplier);
-            Debug.Log(camSpeed * currentMultiplier);
+        else
+            this.transform.position = new Vector3(this.transform.position.x, player.transform.position.y, this.transform.position.z);
     }
     IEnumerator Multiplier()
     {

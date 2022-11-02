@@ -38893,6 +38893,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pause: {fileID: 560276631905686616, guid: 6eb7f5249b896774f897a054e64de918, type: 3}
   pauseButton: {fileID: 951933275}
+  death: {fileID: 560276631905686616, guid: abc71560ab1c8074fbd12de9f24aca45, type: 3}
   postProcessing: {fileID: 1578918559}
   lights:
   - {fileID: 526679145}
@@ -38995,6 +38996,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35b139dd04437084ea3335b1e2023f98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  arrow: {fileID: 2047447768}
   moveDuration: 0.8
 --- !u!95 &2116292289
 Animator:

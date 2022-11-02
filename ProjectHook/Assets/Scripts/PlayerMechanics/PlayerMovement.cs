@@ -8,7 +8,8 @@ public class PlayerMovement : MonoBehaviour
     private GameObject hook;
     private HookMovement hookMovement;
     private ArrowMovement arrowMovement;
-
+    
+    [SerializeField] private GameObject arrow;
     [SerializeField] private float moveDuration = 1f;
 
     private void Start()
@@ -29,6 +30,9 @@ public class PlayerMovement : MonoBehaviour
     {
         DOTween.Clear();
         GameManager.currentGamePhase = GameManager.GamePhases.PLAYERLOCATES;
+    }
+    public void SetActiveArrow(bool value){
+        arrow.SetActive(value);
     }
 
 }
