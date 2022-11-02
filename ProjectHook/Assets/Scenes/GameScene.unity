@@ -19637,8 +19637,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camSpeed: 1
+  maxCamSpeed: 2
   speedMultiplierAmount: 1.1
-  speedMultiplierTimer: 10
+  speedMultiplierTimer: 20
 --- !u!114 &1302240101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19826,7 +19827,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 268.1
+  m_fontSize: 164.7
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

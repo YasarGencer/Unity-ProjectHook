@@ -6,15 +6,15 @@ using UnityEngine.SceneManagement;
 public class CameraMovement : MonoBehaviour
 {
     [Tooltip("Camera's Speed in Y Axis"), SerializeField] float camSpeed = 1;
+    [Tooltip("Max Value of The Camera's Speed in Y Axis"), SerializeField] float maxCamSpeed = 2f;
     [Tooltip("Multiplying Amount of The Multiplier"), SerializeField] float speedMultiplierAmount = 1.1f;
-    [Tooltip("Timer in between Multiplications"), SerializeField] float speedMultiplierTimer = 10f;
-    float currentMultiplier;
+    [Tooltip("Timer in between Multiplications"), SerializeField] float speedMultiplierTimer = 20f;
+    float currentMultiplier = 1;
 
     GameObject player;
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        currentMultiplier = 1 / speedMultiplierAmount;
         StartCoroutine(Multiplier());
         StartCoroutine(StartSpeed(camSpeed));
 
@@ -26,12 +26,14 @@ public class CameraMovement : MonoBehaviour
                 this.transform.position = new Vector3(this.transform.position.x, player.transform.position.y, this.transform.position.z);
             else
                 transform.Translate(Vector3.up * Time.deltaTime * camSpeed * currentMultiplier);
+            Debug.Log(camSpeed * currentMultiplier);
     }
     IEnumerator Multiplier()
     {
         currentMultiplier *= speedMultiplierAmount;
         yield return new WaitForSecondsRealtime(speedMultiplierTimer);
-        StartCoroutine(Multiplier());
+        if(camSpeed*currentMultiplier <= maxCamSpeed)
+            StartCoroutine(Multiplier());
     }
     IEnumerator StartSpeed(float value)
     {
