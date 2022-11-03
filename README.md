@@ -9,8 +9,8 @@
  - Oyuncunun üzerinde belli bir açı arasında gidip gelen ok olacak. / ✓
  - Ekrana tıklandığında kanca atılacak. / ✓
  - Kanca isabet ederse ettiği platformun üstüne çıkacak. / ✓
- - Kanca menzili sınırlı olacak.
- - Kanca duvara çarparsa oyuncuya geri dönecek.
+ - Kanca menzili sınırlı olacak. / ✓
+ - Kanca duvara çarparsa oyuncuya geri dönecek. / ✓
 
 ## Ölme Durumu
 
@@ -80,9 +80,9 @@
 
 ## Ölme Menusu
 
-- Puan
-- Yeniden Oyna
-- Ana Menüye Dön
+- Puan / ✓
+- Yeniden Oyna / ✓
+- Ana Menüye Dön / ✓
 
 # SES
 
