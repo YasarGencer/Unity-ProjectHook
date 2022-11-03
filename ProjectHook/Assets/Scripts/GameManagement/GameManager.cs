@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Application.targetFrameRate = 60;
         currentGamePhase = GamePhases.PLAYERLOCATES;
         arrow = GameObject.Find("Arrow");
         hook = GameObject.Find("Hook");
