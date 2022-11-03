@@ -5,7 +5,6 @@ using UnityEngine;
 public class HookMovement : MonoBehaviour
 {
     private Transform playerTransform;
-    
     [SerializeField] private float hookSpeed = 2f;
     private float range = 6f;
     void Start()

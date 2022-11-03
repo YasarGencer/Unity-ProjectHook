@@ -16,6 +16,7 @@ public class PauseMenu : MonoBehaviour
     void Start()
     {
         cam = GameObject.Find("Main Camera").GetComponent<CameraMovement>();
+        this.GetComponent<Canvas>().worldCamera = cam.gameObject.GetComponent<Camera>();
         anim = GetComponent<Animator>();
         Pause();
     }

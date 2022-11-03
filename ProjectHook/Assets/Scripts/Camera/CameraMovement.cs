@@ -18,18 +18,21 @@ public class CameraMovement : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         StartCoroutine(Multiplier());
         StartCoroutine(StartSpeed(camSpeed));
-        gameUIManager = GameObject.Find("GameUIManager").GetComponent<GameUIManager>();
+        if(SceneManager.GetActiveScene().buildIndex != 0)
+            gameUIManager = GameObject.Find("GameUIManager").GetComponent<GameUIManager>() as GameUIManager;
     }
     private void Update()
     {
         if (player & DeathManager.isDead != true)
             if (player.transform.position.y > this.transform.position.y + 0.1f){
                 this.transform.position = new Vector3(this.transform.position.x, player.transform.position.y, this.transform.position.z);
-                gameUIManager.SetSetPostProcessing(true);
+                if(gameUIManager)
+                    gameUIManager.SetSetPostProcessing(true);
             }
             else{                
                 transform.Translate(Vector3.up * Time.deltaTime * camSpeed * currentMultiplier);
-                gameUIManager.SetSetPostProcessing(false);
+                if(gameUIManager)
+                    gameUIManager.SetSetPostProcessing(false);
             }
         else
             this.transform.position = new Vector3(this.transform.position.x, player.transform.position.y, this.transform.position.z);

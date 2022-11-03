@@ -19,6 +19,7 @@ public class ScoreManager : MonoBehaviour
     Animator scoreAnim;
     private void Start()
     {
+        score = -1;
         InvokeRepeating("UpdateDisplayedScore", 0, 0.05f);
         playerTransform = GameObject.Find("Player").transform;
         startHeight = playerTransform.position.y;
