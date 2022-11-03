@@ -13,8 +13,8 @@ public class MainMenu : MonoBehaviour
     public Slider music, sfx;
     public GameObject postProcessing;
 
-    static string  rateUsURL = "https://play.google.com/store/apps/dev?id=8567089145193331467",
-    playStoreURL = "https://play.google.com/store/apps/dev?id=8567089145193331467",
+    static string  rateUsURL = "",
+    playStoreURL = "",
     yasarURL = "https://www.linkedin.com/in/yasargencer/",
     altayURL = "https://www.linkedin.com/in/altayturan/",
     blackspirestudioURL = "https://blackspirestudio.itch.io/medieval-pixel-art-asset-free",
