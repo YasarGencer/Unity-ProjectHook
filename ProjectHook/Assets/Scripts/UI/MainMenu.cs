@@ -24,6 +24,7 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
+        Application.targetFrameRate = 60;
         gameAnimator = GetComponentInParent<Animator>() as Animator;
         GetSelectedGraphics(); 
         GetAudio();
