@@ -58,6 +58,12 @@ public class MainMenu : MonoBehaviour
     {
         gameAnimator.SetTrigger("InfoClose");
     }
+    public void ShopOpen(){
+        gameAnimator.SetTrigger("ShopOpen");
+    }
+    public void ShopClose(){
+        gameAnimator.SetTrigger("ShopClose");
+    }
 
     public void GetSelectedGraphics()
     {
