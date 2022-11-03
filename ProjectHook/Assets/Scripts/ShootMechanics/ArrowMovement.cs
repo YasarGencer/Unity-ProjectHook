@@ -20,7 +20,7 @@ public class ArrowMovement : MonoBehaviour
 
     public void StopRotation()
     {
-        DOTween.Clear();
+        DOTween.Kill(transform);
     }
 
 }

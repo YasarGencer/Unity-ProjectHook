@@ -16,7 +16,7 @@ public class DeathManager : MonoBehaviour
     }
     void Update()
     {
-        if (playerTransform.position.y < cameraTransform.position.y - 6f && !isDead)
+        if (playerTransform.position.y < cameraTransform.position.y - 7f && !isDead)
         {
             Die();
         }

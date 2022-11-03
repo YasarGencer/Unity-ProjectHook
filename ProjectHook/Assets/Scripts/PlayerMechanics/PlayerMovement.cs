@@ -8,9 +8,11 @@ public class PlayerMovement : MonoBehaviour
     private GameObject hook;
     private HookMovement hookMovement;
     private ArrowMovement arrowMovement;
-    
+
     [SerializeField] private GameObject arrow;
     [SerializeField] private float moveDuration = 1f;
+
+    private Vector3 targetPosition;
 
     private bool isMoving = false;
     private void Start()
@@ -20,27 +22,24 @@ public class PlayerMovement : MonoBehaviour
         hookMovement = hook.GetComponent<HookMovement>();
 
     }
+
+    private void Update()
+    {
+        targetPosition = new Vector3(hook.transform.position.x, hook.transform.position.y, 0);
+    }
     public void GoToPlatform(GameObject platform)
     {
-        var position = new Vector3(hook.transform.position.x, platform.transform.position.y + 0.45f , 0);
+        var position = new Vector3(hook.transform.position.x, platform.transform.position.y + 0.45f, 0);
         transform.DOMove(position, moveDuration);
-        isMoving = true;
         Invoke("StopMoving", moveDuration + .2f);
-        Invoke("SetMoving", moveDuration - .2f);
     }
     private void StopMoving()
     {
-        DOTween.Clear();
+        DOTween.Kill(transform);
         GameManager.currentGamePhase = GameManager.GamePhases.PLAYERLOCATES;
     }
-    public void SetActiveArrow(bool value){
+    public void SetActiveArrow(bool value)
+    {
         arrow.SetActive(value);
     }
-    private void SetMoving(){
-        isMoving = false;
-    }
-    public bool GetMoving(){
-        return isMoving;
-    }
-
 }

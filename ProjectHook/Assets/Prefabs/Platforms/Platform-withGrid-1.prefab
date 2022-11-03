@@ -64,37 +64,27 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 0, y: 0, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 1
-      m_TileSpriteIndex: 1
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 3
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 3f1d8afdca0905943b3801403c79d6d0, type: 2}
   - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: ff07edf7de3fcf947a488f41bf17fbc5, type: 2}
-  - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: eef859e546aa4e344829c5d95ad2eb16, type: 2}
   m_TileSpriteArray:
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 21300260, guid: cf57b3e7835b02e4493371d9bc259b1b, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 21300258, guid: cf57b3e7835b02e4493371d9bc259b1b, type: 3}
-  - m_RefCount: 1
     m_Data: {fileID: 21300256, guid: cf57b3e7835b02e4493371d9bc259b1b, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 3
+  - m_RefCount: 2
     m_Data:
       e00: 1
       e01: 0
@@ -119,7 +109,7 @@ Tilemap:
     m_Data: {r: 1.68915e-40, g: 1.68915e-40, b: 1.68915e-40, a: 1.68915e-40}
   - m_RefCount: 0
     m_Data: {r: 4.3816e-41, g: 4.3816e-41, b: 4.3816e-41, a: 4.3816e-41}
-  - m_RefCount: 3
+  - m_RefCount: 2
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -235,13 +225,13 @@ MonoBehaviour:
   - {x: -2.0059903, y: 0.13179223, z: 0}
   - {x: -2.0047724, y: 0.30539167, z: 0}
   - {x: -1.9650829, y: 0.3533431, z: 0}
-  - {x: 0.9331665, y: 0.35536593, z: 0}
-  - {x: 1.0034717, y: 0.3027749, z: 0}
-  - {x: 0.997412, y: 0.13402651, z: 0}
-  - {x: 0.8029803, y: 0.0017525405, z: 0}
-  m_ShapePathHash: -743705625
+  - {x: -0.049990535, y: 0.34567964, z: 0}
+  - {x: -0.003901124, y: 0.3173043, z: 0}
+  - {x: -0.005117595, y: 0.13402651, z: 0}
+  - {x: -0.18501991, y: -0.0030905977, z: 0}
+  m_ShapePathHash: -1001997379
   m_Mesh: {fileID: 0}
-  m_InstanceId: 42316
+  m_InstanceId: 51688
 --- !u!1 &2873232010905553107
 GameObject:
   m_ObjectHideFlags: 0

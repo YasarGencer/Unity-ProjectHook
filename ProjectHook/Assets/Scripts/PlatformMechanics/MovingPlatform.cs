@@ -1,24 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
+using DG.Tweening;
 
 public class MovingPlatform : MonoBehaviour
 {
     Vector2 startPos;
-    int dir = 1;
+    Vector2 endPos;
     [SerializeField] float speed = 1;
-    [SerializeField] float range = 1;
     private void Start()
     {
-        startPos = this.transform.position;
-    }
-    void Update()
-    {
-        transform.Translate(Vector2.right * dir * Time.deltaTime * speed);
+        startPos = new Vector3(-1.5f, transform.position.y,0);
+        endPos = new Vector3(1.5f, transform.position.y,0);
+        transform.position = startPos;
 
-        if (this.transform.position.x > startPos.x + range)
-            dir = -1;
-        else if (this.transform.position.x < startPos.x - range)
-            dir = 1;
+        transform.DOMove(endPos, 2f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutSine);
     }
+    
 }
