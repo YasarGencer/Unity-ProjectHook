@@ -44,7 +44,7 @@ public class ScoreManager : MonoBehaviour
         }
         else
             scoreAnim.SetBool("ScoreUp", false);
-        scoreText.text = "-- " + ((int)score).ToString() + " --";
+        scoreText.text = ((int)score).ToString();
     }
 
     public static void SetHigscore(){
