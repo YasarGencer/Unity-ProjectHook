@@ -32,7 +32,7 @@ public class PauseMenu : MonoBehaviour
         //SET VALUES
         isPaused = true;
         ScoreManager.SetHigscore();
-        hscoreText.text = PlayerPrefs.GetInt(ScoreManager.highscoreT, 0).ToString();
+        hscoreText.text = ScoreManager.GetHighscore().ToString();
 
         GetAudio();
     }
@@ -50,6 +50,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void Menu()
     {
+        ScoreManager.scoreMultiplier = scoreMultiplier;
         SceneManager.LoadScene("Mainmenu");
     }
     public void GetAudio()

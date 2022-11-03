@@ -32,9 +32,6 @@ public class GameUIManager : MonoBehaviour
             }
         }
     }
-    void Update(){
-        SetPostProcessing(setPostProcessing);
-    }
     public void Pause()
     {
         Instantiate(pause);
@@ -45,6 +42,7 @@ public class GameUIManager : MonoBehaviour
     public void Death(){
         Instantiate(death);
     }
+    /*
     public void SetPostProcessing(bool value){
         if(PlayerPrefs.GetInt("Graphics", 1) == 1){
             if (postProcessing.profile.TryGet<ChromaticAberration>(out var chromaticAberration)){
@@ -65,4 +63,5 @@ public class GameUIManager : MonoBehaviour
     public void SetSetPostProcessing(bool value){
         setPostProcessing = value;
     }
+    */
 }

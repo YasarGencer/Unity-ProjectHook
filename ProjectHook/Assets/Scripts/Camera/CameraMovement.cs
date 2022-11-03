@@ -28,22 +28,12 @@ public class CameraMovement : MonoBehaviour
         if (player & DeathManager.isDead != true)
             if (player.transform.position.y > this.transform.position.y){
                 this.transform.position = new Vector3(this.transform.position.x, player.transform.position.y, this.transform.position.z);
-                if(gameUIManager)
-                    if(playerMovement.GetMoving())
-                        gameUIManager.SetSetPostProcessing(true);
-                    else
-                        gameUIManager.SetSetPostProcessing(false);
-                
             }
             else{                
                 transform.Translate(Vector3.up * Time.deltaTime * camSpeed * currentMultiplier);
-                if(gameUIManager)
-                    gameUIManager.SetSetPostProcessing(false);
             }
         else{
             this.transform.position = new Vector3(this.transform.position.x, player.transform.position.y, this.transform.position.z);
-            if(gameUIManager)
-                    gameUIManager.SetSetPostProcessing(false);
         }
     }
     IEnumerator Multiplier()

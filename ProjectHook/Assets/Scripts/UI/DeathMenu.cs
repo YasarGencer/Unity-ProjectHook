@@ -16,7 +16,8 @@ public class DeathMenu : MonoBehaviour
     public void Die(){
         cam = Camera.main;
         GetComponent<Canvas>().worldCamera = cam;
-        hscoreText.text = PlayerPrefs.GetInt(ScoreManager.highscoreT, 0).ToString();
+        ScoreManager.SetHigscore();
+        hscoreText.text = ScoreManager.GetHighscore().ToString();
         DeathManager.isDead = true;
         player = GameObject.FindGameObjectWithTag("Player");
         player.GetComponent<BoxCollider2D>().isTrigger = true;
