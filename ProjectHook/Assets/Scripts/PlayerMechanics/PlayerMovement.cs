@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private GameObject arrow;
     [SerializeField] private float moveDuration = 1f;
 
-
+    private bool isMoving = false;
     private void Start()
     {
         hook = GameObject.Find("Hook");
@@ -24,7 +24,9 @@ public class PlayerMovement : MonoBehaviour
     {
         var position = new Vector3(hook.transform.position.x, platform.transform.position.y + 0.45f , 0);
         transform.DOMove(position, moveDuration);
+        isMoving = true;
         Invoke("StopMoving", moveDuration + .2f);
+        Invoke("SetMoving", moveDuration - .2f);
     }
     private void StopMoving()
     {
@@ -33,6 +35,12 @@ public class PlayerMovement : MonoBehaviour
     }
     public void SetActiveArrow(bool value){
         arrow.SetActive(value);
+    }
+    private void SetMoving(){
+        isMoving = false;
+    }
+    public bool GetMoving(){
+        return isMoving;
     }
 
 }

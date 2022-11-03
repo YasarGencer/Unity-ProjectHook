@@ -13,8 +13,8 @@ public class MainMenu : MonoBehaviour
     public Slider music, sfx;
     public GameObject postProcessing;
 
-    static string  rateUsURL = "",
-    playStoreURL = "",
+    static string  rateUsURL = "https://play.google.com/store/apps/dev?id=8567089145193331467",
+    playStoreURL = "https://play.google.com/store/apps/dev?id=8567089145193331467",
     yasarURL = "https://www.linkedin.com/in/yasargencer/",
     altayURL = "https://www.linkedin.com/in/altayturan/",
     blackspirestudioURL = "https://blackspirestudio.itch.io/medieval-pixel-art-asset-free",
@@ -24,7 +24,6 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
-        Application.targetFrameRate = 60;
         gameAnimator = GetComponentInParent<Animator>() as Animator;
         GetSelectedGraphics(); 
         GetAudio();

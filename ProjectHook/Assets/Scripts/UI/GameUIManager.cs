@@ -49,13 +49,16 @@ public class GameUIManager : MonoBehaviour
         if(PlayerPrefs.GetInt("Graphics", 1) == 1){
             if (postProcessing.profile.TryGet<ChromaticAberration>(out var chromaticAberration)){
                 if (value == true){
-                    chromaticAberration.intensity.value += .05f;
+                    chromaticAberration.intensity.value += .075f;
                 }
                 else{
-                    chromaticAberration.intensity.value -= .05f;
+                    chromaticAberration.intensity.value -= .25f;
                 }
-                chromaticAberration.intensity.value =  Mathf.Clamp(chromaticAberration.intensity.value, .3f, .75f);
-            }            
+                chromaticAberration.intensity.value =  Mathf.Clamp(chromaticAberration.intensity.value, 0f, .75f);
+            }
+            if (postProcessing.profile.TryGet<Bloom>(out var bloom)){
+                    bloom.intensity.value = 3f;
+            }           
 
         }        
     }

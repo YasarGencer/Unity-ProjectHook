@@ -12,10 +12,12 @@ public class CameraMovement : MonoBehaviour
     float currentMultiplier = 1;
 
     GameObject player;
+    PlayerMovement playerMovement;
     private GameUIManager gameUIManager;
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        playerMovement = player.GetComponent<PlayerMovement>();
         StartCoroutine(Multiplier());
         StartCoroutine(StartSpeed(camSpeed));
         if(SceneManager.GetActiveScene().buildIndex != 0)
@@ -24,18 +26,25 @@ public class CameraMovement : MonoBehaviour
     private void Update()
     {
         if (player & DeathManager.isDead != true)
-            if (player.transform.position.y > this.transform.position.y + 0.1f){
+            if (player.transform.position.y > this.transform.position.y){
                 this.transform.position = new Vector3(this.transform.position.x, player.transform.position.y, this.transform.position.z);
                 if(gameUIManager)
-                    gameUIManager.SetSetPostProcessing(true);
+                    if(playerMovement.GetMoving())
+                        gameUIManager.SetSetPostProcessing(true);
+                    else
+                        gameUIManager.SetSetPostProcessing(false);
+                
             }
             else{                
                 transform.Translate(Vector3.up * Time.deltaTime * camSpeed * currentMultiplier);
                 if(gameUIManager)
                     gameUIManager.SetSetPostProcessing(false);
             }
-        else
+        else{
             this.transform.position = new Vector3(this.transform.position.x, player.transform.position.y, this.transform.position.z);
+            if(gameUIManager)
+                    gameUIManager.SetSetPostProcessing(false);
+        }
     }
     IEnumerator Multiplier()
     {
