@@ -12,10 +12,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private GameObject arrow;
     [SerializeField] private float moveDuration = 1f;
 
+
     private void Start()
     {
         hook = GameObject.Find("Hook");
-        arrowMovement = GameObject.Find("Arrow").GetComponent<ArrowMovement>();
+        arrowMovement = GetComponentInChildren<ArrowMovement>();
         hookMovement = hook.GetComponent<HookMovement>();
 
     }
@@ -25,7 +26,6 @@ public class PlayerMovement : MonoBehaviour
         transform.DOMove(position, moveDuration);
         Invoke("StopMoving", moveDuration + .2f);
     }
-
     private void StopMoving()
     {
         DOTween.Clear();

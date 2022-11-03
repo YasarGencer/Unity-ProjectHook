@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.Rendering;
 
 public class GameUIManager : MonoBehaviour
 {
     [SerializeField] GameObject pause, pauseButton;
     [SerializeField] GameObject death;
-    [SerializeField] GameObject postProcessing;
+    [SerializeField] Volume postProcessing;
     [SerializeField] GameObject[] lights;
     
+    [HideInInspector] public bool setPostProcessing;
+
     private void Awake() {
         PauseMenu.isPaused = false;
     }
@@ -19,7 +22,7 @@ public class GameUIManager : MonoBehaviour
         Invoke("PauseButton",3);
         if (PlayerPrefs.GetInt("Graphics", 1) == 0)
         {
-            postProcessing.SetActive(false);
+            postProcessing.gameObject.SetActive(false);
             foreach (var item in lights)
             {
                 if (item.name == "GlobalLight")
@@ -28,6 +31,9 @@ public class GameUIManager : MonoBehaviour
                     item.SetActive(false);
             }
         }
+    }
+    void Update(){
+        SetPostProcessing(setPostProcessing);
     }
     public void Pause()
     {
@@ -38,5 +44,22 @@ public class GameUIManager : MonoBehaviour
     }
     public void Death(){
         Instantiate(death);
+    }
+    public void SetPostProcessing(bool value){
+        if(PlayerPrefs.GetInt("Graphics", 1) == 1){
+            if (postProcessing.profile.TryGet<ChromaticAberration>(out var chromaticAberration)){
+                if (value == true){
+                    chromaticAberration.intensity.value += .05f;
+                }
+                else{
+                    chromaticAberration.intensity.value -= .05f;
+                }
+                chromaticAberration.intensity.value =  Mathf.Clamp(chromaticAberration.intensity.value, .3f, .75f);
+            }            
+
+        }        
+    }
+    public void SetSetPostProcessing(bool value){
+        setPostProcessing = value;
     }
 }
