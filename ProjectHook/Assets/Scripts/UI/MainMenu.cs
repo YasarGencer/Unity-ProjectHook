@@ -13,6 +13,15 @@ public class MainMenu : MonoBehaviour
     public Slider music, sfx;
     public GameObject postProcessing;
 
+    static string  rateUsURL = "",
+    playStoreURL = "https://play.google.com/store/apps/dev?id=8567089145193331467",
+    yasarURL = "https://www.linkedin.com/in/yasargencer/",
+    altayURL = "https://www.linkedin.com/in/altayturan/",
+    blackspirestudioURL = "https://blackspirestudio.itch.io/medieval-pixel-art-asset-free",
+    tinyworldsURL = "https://assetstore.unity.com/packages/2d/fonts/free-pixel-font-thaleah-140059";
+
+    string[] id = {rateUsURL, playStoreURL, yasarURL, altayURL, blackspirestudioURL, tinyworldsURL};
+
     private void Start()
     {
         gameAnimator = GetComponentInParent<Animator>() as Animator;
@@ -83,5 +92,8 @@ public class MainMenu : MonoBehaviour
     public void SetSFX()
     {
         PlayerPrefs.SetFloat("sfx", sfx.value);
+    }
+    public void OpenUrl(int id){
+        Application.OpenURL(this.id[id]);
     }
 }
