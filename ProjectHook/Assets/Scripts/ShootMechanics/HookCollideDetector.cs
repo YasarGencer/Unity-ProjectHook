@@ -15,7 +15,6 @@ public class HookCollideDetector : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        currentCollision = collision;
 
 
         if (collision.collider.CompareTag("Platform"))
@@ -23,18 +22,14 @@ public class HookCollideDetector : MonoBehaviour
             playerTransform.transform.parent = null;
             this.transform.parent = null;
             GameManager.currentGamePhase = GameManager.GamePhases.HOOKHITS;
-            //currentCollision = collision;
-
+            currentCollision = collision;
         }
         if (collision.collider.CompareTag("MovingPlatform"))
         {
             playerTransform.SetParent(collision.collider.transform);
             this.transform.SetParent(collision.collider.transform);
             GameManager.currentGamePhase = GameManager.GamePhases.HOOKHITS;
-        }
-        if (collision.collider.CompareTag("Walls"))
-        {
-            GameManager.currentGamePhase = GameManager.GamePhases.HOOKMISSES;
+            currentCollision = collision;
         }
     }
 }

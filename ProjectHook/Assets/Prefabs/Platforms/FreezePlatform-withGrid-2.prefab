@@ -241,18 +241,18 @@ MonoBehaviour:
   m_SelfShadows: 0
   m_ApplyToSortingLayers: 00000000
   m_ShapePath:
-  - {x: -0.8400266, y: 0.006222293, z: 0}
-  - {x: -0.98541534, y: 0.11492529, z: 0}
-  - {x: -1.0039804, y: 0.29956034, z: 0}
-  - {x: -0.9357611, y: 0.34674892, z: 0}
-  - {x: 0.9313829, y: 0.3473187, z: 0}
-  - {x: 0.9905084, y: 0.3083737, z: 0}
-  - {x: 0.98164475, y: 0.13825083, z: 0}
-  - {x: 0.92944217, y: 0.08872099, z: 0}
+  - {x: 0.1746068, y: -0.012004659, z: 0}
+  - {x: 0.010991216, y: 0.11492529, z: 0}
+  - {x: -0.0014982224, y: 0.28740904, z: 0}
+  - {x: 0.049987853, y: 0.35352334, z: 0}
+  - {x: 3.9547412, y: 0.35776332, z: 0}
+  - {x: 4.001281, y: 0.307685, z: 0}
+  - {x: 3.9993799, y: 0.13825083, z: 0}
+  - {x: 3.8272004, y: 0.0014933795, z: 0}
   - {x: 0.82412493, y: -0.0046057105, z: 0}
-  m_ShapePathHash: -1115794250
+  m_ShapePathHash: 195484533
   m_Mesh: {fileID: 0}
-  m_InstanceId: 81834
+  m_InstanceId: 51538
 --- !u!1 &2873232010905553107
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,7 +265,7 @@ GameObject:
   - component: {fileID: 2873232010905553104}
   m_Layer: 0
   m_Name: FreezePlatform-withGrid-2
-  m_TagString: Platform
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
