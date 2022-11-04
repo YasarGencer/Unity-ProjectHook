@@ -15,12 +15,12 @@
 ## Ölme Durumu
 
  - Kamera yukarı doğru hızlanarak ilerleyecek. / ✓
- - Eğer oyuncu kameranın altında kalırsa oyun bitecek.
+ - Eğer oyuncu kameranın altında kalırsa oyun bitecek. / ✓
 
 ## Tuzaklı Platformlar
 
   - Uzun süre üstünde durunca kırılan platform.
-  - Üstünde testere gezen platform.
+  - Üstünde testere gezen platform. / X
   - Hareket eden platform.  / ✓
   - Buz fırlatan playform.  / ✓
  
