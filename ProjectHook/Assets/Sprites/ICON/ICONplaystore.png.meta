@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3b983809423aa9c4dacb9c49697a97d9
+guid: f2476fbc33a8fbd42a289f52a0e8e788
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -103,17 +103,29 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ICONrestart_0
+      name: ICONplaystore_0
       rect:
         serializedVersion: 2
         x: 31
-        y: 34
+        y: 19
         width: 148
-        height: 148
+        height: 178
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,8 +133,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c2d3910670a55f49a4ea03f7f977ebe
-      internalID: -542299607
+      spriteID: 326f56ccfb5e02e46ac7ff2dd4f27461
+      internalID: -59776405
       vertices: []
       indices: 
       edges: []
@@ -138,7 +150,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ICONrestart_0: -542299607
+      ICONplaystore_0: -59776405
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

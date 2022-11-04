@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f0d3cd4f3adfff44cbc6271128fe2f0b
+guid: 805100b1dc536f34d9b5943b5fd8de07
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -103,17 +103,29 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ICONinfo_0
+      name: ICONQuit_0
       rect:
         serializedVersion: 2
-        x: 44
+        x: 29
         y: 28
-        width: 72
-        height: 226
+        width: 105
+        height: 106
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,8 +133,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4583e39f1dacec49ab6efce2c980569
-      internalID: -768775662
+      spriteID: 40e472c79ecc73648b145cef47411adc
+      internalID: 824330489
       vertices: []
       indices: 
       edges: []
@@ -138,8 +150,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ICONinfo_0: -768775662
-      ICONinfo_1: -918900767
+      ICONQuit_1: -1966393426
+      ICONQuit_5: -1603476917
+      ICONQuit_8: -1693391441
+      ICONQuit_9: -1671968317
+      ICONQuit_2: 2109657249
+      ICONQuit_0: 824330489
+      ICONQuit_4: 1883503539
+      ICONQuit_7: -1284941349
+      ICONQuit_3: 1364812296
+      ICONQuit_6: -517703481
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

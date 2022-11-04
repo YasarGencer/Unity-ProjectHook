@@ -17,6 +17,8 @@ MonoBehaviour:
   - {fileID: 2873232010905553107, guid: 15464b5188f9d654bb54fb329cd7970a, type: 3}
   - {fileID: 2873232010905553107, guid: 5e59bd8b7bd6a8e4b8e5671e7df21bae, type: 3}
   - {fileID: 2873232010905553107, guid: 41989f5706f110c43b11b5171bbdbfa1, type: 3}
+  - {fileID: 2873232010905553107, guid: 575355036eff54c47b2b80251f4cc240, type: 3}
+  - {fileID: 2873232010905553107, guid: 14f4fc514e199ed4db036c498a9627e1, type: 3}
   detailsList:
   - {fileID: 1888605178837268, guid: e18055fbe150b8c4aabcb10d06858eea, type: 3}
   - {fileID: 1888605178837268, guid: e18055fbe150b8c4aabcb10d06858eea, type: 3}
