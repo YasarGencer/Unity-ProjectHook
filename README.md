@@ -21,7 +21,13 @@
 
   - Uzun süre üstünde durunca kırılan platform.
   - Üstünde testere gezen platform.
-  - Hareket eden platform.
+  - Hareket eden platform.  / ✓
+  - Buz fırlatan playform.  / ✓
+ 
+ ## Donma
+ 
+  - Buza çarparsa donacak. / ✓
+  - 3 kere tıklayarak buzu kırcakç. / ✓
   
  ## Skor sistemi
    
