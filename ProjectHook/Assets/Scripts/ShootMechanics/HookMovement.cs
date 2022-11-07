@@ -9,7 +9,7 @@ public class HookMovement : MonoBehaviour
     [SerializeField] private float range = 6f;
 
     // Update is called once per frame
-    public void Move(Transform from)
+    public void MoveFrom(Transform from)
     {
         transform.Translate(Vector2.up * Time.deltaTime * hookSpeed);
         if (Vector3.Distance(from.position, transform.position) > range)

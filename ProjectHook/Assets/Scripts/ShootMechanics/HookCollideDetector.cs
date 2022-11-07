@@ -3,33 +3,29 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using static GameManager;
 
 public class HookCollideDetector : MonoBehaviour
 {
-    public Collision2D currentCollision;
-    private Transform playerTransform;
+    private Collision2D currentCollision;
 
-    private void Start()
-    {
-        playerTransform = GameObject.Find("Player").transform;
-    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        currentCollision = collision;
+    }
 
 
-        if (collision.collider.CompareTag("Platform"))
-        {
-            playerTransform.transform.parent = null;
-            this.transform.parent = null;
-            GameManager.currentGamePhase = GameManager.GamePhases.HOOKHITS;
-            currentCollision = collision;
-        }
-        if (collision.collider.CompareTag("MovingPlatform"))
-        {
-            playerTransform.SetParent(collision.collider.transform);
-            this.transform.SetParent(collision.collider.transform);
-            GameManager.currentGamePhase = GameManager.GamePhases.HOOKHITS;
-            currentCollision = collision;
-        }
+    public void SetCurrentCollision(Collision2D value)
+    {
+        currentCollision = value;
+    }
+
+    public Collision2D GetPlatform()
+    {
+        if (currentCollision == null)
+            return null;
+        if (currentCollision.collider.CompareTag("Platform") || currentCollision.collider.CompareTag("MovingPlatform"))
+            return currentCollision;
+        return null;
     }
 }

@@ -74,19 +74,35 @@ public class GameManager : MonoBehaviour
         if (currentGamePhase == GamePhases.HOOKMOVES)
         {
             arrowAndRangeDisplay.HideArrowAndRange();
-            hookMovement.Move(player.transform);
+            hookMovement.MoveFrom(player.transform);
+            if (hookCollideDetector.GetPlatform() != null)
+            {
+                Debug.Log(hookCollideDetector.GetPlatform().collider.tag);
+                if (hookCollideDetector.GetPlatform().collider.CompareTag("Platform"))
+                {
+                    player.transform.parent = null;
+                    hook.transform.parent = null;
+                    currentGamePhase = GamePhases.HOOKHITS;
+
+                }
+                if (hookCollideDetector.GetPlatform().collider.CompareTag("MovingPlatform"))
+                {
+                    player.transform.SetParent(hookCollideDetector.GetPlatform().collider.transform);
+                    hook.transform.SetParent(hookCollideDetector.GetPlatform().collider.transform);
+                    currentGamePhase = GamePhases.HOOKHITS;
+                }
+            }
         }
         //--------------------------------------------------------------
         if (currentGamePhase == GamePhases.HOOKHITS)
         {
             currentGamePhase = GamePhases.PLAYERMOVES;
             playerMovement.Invoke("StopMoving", playerMovement.moveDuration + 0.01f);
-            Debug.Log(hookCollideDetector.currentCollision.collider.gameObject.GetInstanceID());
         }
         //--------------------------------------------------------------
         if (currentGamePhase == GamePhases.PLAYERMOVES)
         {
-            playerMovement.GoToPlatform(hookCollideDetector.currentCollision.collider.gameObject,hook);
+            playerMovement.GoToPlatform(hookCollideDetector.GetPlatform().collider.gameObject, hook);
 
         }
         //--------------------------------------------------------------
@@ -99,11 +115,10 @@ public class GameManager : MonoBehaviour
         {
             arrowMovement.ResetArrowRotation();
             arrowMovement.StartRotation();
-
             hookMovement.SetPosition(player.transform);
             arrowAndRangeDisplay.DisplayArrowAndRange();
-
             currentGamePhase = GamePhases.AIM;
+            hookCollideDetector.SetCurrentCollision(null);
         }
     }
 }
