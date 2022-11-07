@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
         if (currentGamePhase == GamePhases.HOOKHITS)
         {
             currentGamePhase = GamePhases.PLAYERMOVES;
-            playerMovement.Invoke("StopMoving", playerMovement.moveDuration + 0.1f);
+            playerMovement.Invoke("StopMoving", playerMovement.moveDuration + 0.01f);
         }
         //--------------------------------------------------------------
         if (currentGamePhase == GamePhases.PLAYERMOVES)

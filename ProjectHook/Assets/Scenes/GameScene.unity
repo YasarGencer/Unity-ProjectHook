@@ -39514,7 +39514,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxDegree: 45
-  rotationDuration: 1
+  rotationDuration: 0.7
 --- !u!1 &2082684866
 GameObject:
   m_ObjectHideFlags: 0
