@@ -35,62 +35,9 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (DeathManager.isDead == false && freezeManager.GetFrozen() == false)
-        {
-            //--------------------------------------------------------------
-            if (currentGamePhase == GamePhases.AIM)
-            {
-                hookMovement.RotateWith(arrow.transform);
-                if (InputController.GetTouchPhase() == TouchPhase.Began || InputController.GetTouchPhase() == TouchPhase.Stationary)
-                {
-                    if (PauseMenu.isPaused == false && Camera.main.ScreenToViewportPoint(Input.GetTouch(0).position).y < 0.75)
-                    {
-                        currentGamePhase = GamePhases.SHOOT;
-                    }
-                }
-            }
-            //--------------------------------------------------------------
-            if (currentGamePhase == GamePhases.SHOOT)
-            {
-                arrowMovement.StopRotation();
-                currentGamePhase = GamePhases.HOOKMOVES;
-            }
-            //--------------------------------------------------------------
-            if (currentGamePhase == GamePhases.HOOKMOVES)
-            {
-                arrowAndRangeDisplay.HideArrowAndRange();
-                hookMovement.Move();
-            }
-            //--------------------------------------------------------------
-            if (currentGamePhase == GamePhases.HOOKHITS)
-            {
-                currentGamePhase = GamePhases.PLAYERMOVES;
-                playerMovement.Invoke("StopMoving", playerMovement.moveDuration +0.1f);
-            }
-            //--------------------------------------------------------------
-            if (currentGamePhase == GamePhases.PLAYERMOVES)
-            {
-                playerMovement.GoToPlatform(hookCollideDetector.currentCollision.collider.gameObject);
-                
-            }
-            //--------------------------------------------------------------
-            if (currentGamePhase == GamePhases.HOOKMISSES)
-            {
-                currentGamePhase = GamePhases.PLAYERLOCATES;
-            }
-            //--------------------------------------------------------------
-            if (currentGamePhase == GamePhases.PLAYERLOCATES)
-            {
-                arrowMovement.ResetArrowRotation();
-                arrowMovement.StartRotation();
-
-                hookMovement.ResetPosition();
-                arrowAndRangeDisplay.DisplayArrowAndRange();
-
-                currentGamePhase = GamePhases.AIM;
-            }
-        }
-        else if (freezeManager.GetFrozen() == true)
+        if (DeathManager.isDead && freezeManager.GetFrozen() == false)
+            return;
+        if (freezeManager.GetFrozen() == true)
         {
             if (InputController.GetTouchPhase() == TouchPhase.Began)
             {
@@ -99,6 +46,59 @@ public class GameManager : MonoBehaviour
                     freezeManager.FrozenEffector();
                 }
             }
+            return;
+        }
+        //--------------------------------------------------------------
+        if (currentGamePhase == GamePhases.AIM)
+        {
+            hookMovement.RotateWith(arrow.transform);
+            if (InputController.GetTouchPhase() == TouchPhase.Began || InputController.GetTouchPhase() == TouchPhase.Stationary)
+            {
+                if (PauseMenu.isPaused == false && Camera.main.ScreenToViewportPoint(Input.GetTouch(0).position).y < 0.75)
+                {
+                    currentGamePhase = GamePhases.SHOOT;
+                }
+            }
+        }
+        //--------------------------------------------------------------
+        if (currentGamePhase == GamePhases.SHOOT)
+        {
+            arrowMovement.StopRotation();
+            currentGamePhase = GamePhases.HOOKMOVES;
+        }
+        //--------------------------------------------------------------
+        if (currentGamePhase == GamePhases.HOOKMOVES)
+        {
+            arrowAndRangeDisplay.HideArrowAndRange();
+            hookMovement.Move();
+        }
+        //--------------------------------------------------------------
+        if (currentGamePhase == GamePhases.HOOKHITS)
+        {
+            currentGamePhase = GamePhases.PLAYERMOVES;
+            playerMovement.Invoke("StopMoving", playerMovement.moveDuration + 0.1f);
+        }
+        //--------------------------------------------------------------
+        if (currentGamePhase == GamePhases.PLAYERMOVES)
+        {
+            playerMovement.GoToPlatform(hookCollideDetector.currentCollision.collider.gameObject);
+
+        }
+        //--------------------------------------------------------------
+        if (currentGamePhase == GamePhases.HOOKMISSES)
+        {
+            currentGamePhase = GamePhases.PLAYERLOCATES;
+        }
+        //--------------------------------------------------------------
+        if (currentGamePhase == GamePhases.PLAYERLOCATES)
+        {
+            arrowMovement.ResetArrowRotation();
+            arrowMovement.StartRotation();
+
+            hookMovement.ResetPosition();
+            arrowAndRangeDisplay.DisplayArrowAndRange();
+
+            currentGamePhase = GamePhases.AIM;
         }
     }
 }

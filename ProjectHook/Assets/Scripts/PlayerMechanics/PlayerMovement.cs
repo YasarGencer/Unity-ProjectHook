@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     }
     public void GoToPlatform(GameObject platform)
     {
+        Debug.Log(platform.tag);
         var position = new Vector3(hook.transform.position.x, platform.transform.position.y + 0.45f, 0);
         transform.DOMove(position, moveDuration);
     }
