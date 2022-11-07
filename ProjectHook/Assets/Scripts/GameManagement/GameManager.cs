@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public static GamePhases currentGamePhase;
 
     private GameObject arrow;
+    private GameObject hook;
+    private GameObject player;
 
     private ArrowMovement arrowMovement;
     private HookMovement hookMovement;
@@ -23,13 +25,15 @@ public class GameManager : MonoBehaviour
     {
         currentGamePhase = GamePhases.PLAYERLOCATES;
         arrow = GameObject.Find("Arrow");
+        hook = GameObject.Find("Hook");
+        player = GameObject.Find("Player");
 
         freezeManager = GetComponent<FreezeManager>();
-        arrowMovement = GameObject.Find("Arrow").GetComponent<ArrowMovement>();
+        arrowMovement = arrow.GetComponent<ArrowMovement>();
         arrowAndRangeDisplay = GetComponent<ArrowAndRangeDisplay>();
 
-        hookMovement = GameObject.Find("Hook").GetComponent<HookMovement>();
-        hookCollideDetector = GameObject.Find("Hook").GetComponent<HookCollideDetector>();
+        hookMovement = hook.GetComponent<HookMovement>();
+        hookCollideDetector = hook.GetComponent<HookCollideDetector>();
         playerMovement = GameObject.Find("Player").GetComponent<PlayerMovement>();
     }
 
@@ -70,18 +74,19 @@ public class GameManager : MonoBehaviour
         if (currentGamePhase == GamePhases.HOOKMOVES)
         {
             arrowAndRangeDisplay.HideArrowAndRange();
-            hookMovement.Move();
+            hookMovement.Move(player.transform);
         }
         //--------------------------------------------------------------
         if (currentGamePhase == GamePhases.HOOKHITS)
         {
             currentGamePhase = GamePhases.PLAYERMOVES;
             playerMovement.Invoke("StopMoving", playerMovement.moveDuration + 0.01f);
+            Debug.Log(hookCollideDetector.currentCollision.collider.gameObject.GetInstanceID());
         }
         //--------------------------------------------------------------
         if (currentGamePhase == GamePhases.PLAYERMOVES)
         {
-            playerMovement.GoToPlatform(hookCollideDetector.currentCollision.collider.gameObject);
+            playerMovement.GoToPlatform(hookCollideDetector.currentCollision.collider.gameObject,hook);
 
         }
         //--------------------------------------------------------------
@@ -95,7 +100,7 @@ public class GameManager : MonoBehaviour
             arrowMovement.ResetArrowRotation();
             arrowMovement.StartRotation();
 
-            hookMovement.ResetPosition();
+            hookMovement.SetPosition(player.transform);
             arrowAndRangeDisplay.DisplayArrowAndRange();
 
             currentGamePhase = GamePhases.AIM;
