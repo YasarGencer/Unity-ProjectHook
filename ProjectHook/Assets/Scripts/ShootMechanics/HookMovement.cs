@@ -7,7 +7,12 @@ public class HookMovement : MonoBehaviour
 
     [SerializeField] private float hookSpeed = 2f;
     [SerializeField] private float range = 6f;
+    private Rigidbody2D rb;
 
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
     // Update is called once per frame
     public void MoveFrom(Transform from)
     {
@@ -24,5 +29,10 @@ public class HookMovement : MonoBehaviour
     public void RotateWith(Transform target)
     {
         transform.rotation = target.rotation;
+    }
+
+    public void StopHook()
+    {
+        Debug.Log("Girdi");
     }
 }

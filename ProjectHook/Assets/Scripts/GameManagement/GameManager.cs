@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour
             hookMovement.MoveFrom(player.transform);
             if (hookCollideDetector.GetPlatform() != null)
             {
-                Debug.Log(hookCollideDetector.GetPlatform().collider.tag);
+                hookMovement.StopHook();
                 if (hookCollideDetector.GetPlatform().collider.CompareTag("Platform"))
                 {
                     player.transform.parent = null;
@@ -96,6 +96,7 @@ public class GameManager : MonoBehaviour
         //--------------------------------------------------------------
         if (currentGamePhase == GamePhases.HOOKHITS)
         {
+            
             currentGamePhase = GamePhases.PLAYERMOVES;
             playerMovement.Invoke("StopMoving", playerMovement.moveDuration + 0.01f);
         }

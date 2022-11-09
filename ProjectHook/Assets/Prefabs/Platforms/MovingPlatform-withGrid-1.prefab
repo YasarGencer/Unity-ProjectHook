@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2873232010053024192}
   - component: {fileID: 2873232010053024195}
   - component: {fileID: 3334704260747663933}
+  - component: {fileID: 6585115951611352258}
   m_Layer: 0
   m_Name: Tilemap
   m_TagString: MovingPlatform
@@ -242,7 +243,28 @@ MonoBehaviour:
   - {x: 0.81432855, y: -0.018953443, z: 0}
   m_ShapePathHash: -1179348976
   m_Mesh: {fileID: 0}
-  m_InstanceId: 90474
+  m_InstanceId: 54238
+--- !u!50 &6585115951611352258
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2873232010053024220}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &2873232010905553107
 GameObject:
   m_ObjectHideFlags: 0
