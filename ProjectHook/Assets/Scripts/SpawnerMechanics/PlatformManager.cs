@@ -5,10 +5,18 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Platform List", menuName = "PlatformList")]
 public class PlatformManager : ScriptableObject
 {
-    [SerializeField] List<GameObject> platformList;
+    [SerializeField] List<GameObject> basicPlatformList, advancedPlatformList;
     [SerializeField] List<GameObject> detailsList;
-    public GameObject GetRandom(List<GameObject> list) { return list[Random.Range(0, list.Count)]; }
+    List<GameObject> allPlatformList;
 
-    public List<GameObject> GetPlatformList() { return platformList; }
+    private void SetAllPlatforms() {
+        foreach (GameObject item in basicPlatformList)
+            allPlatformList.Add(item);
+        foreach (GameObject item in advancedPlatformList)
+            allPlatformList.Add(item);
+    }
+    public GameObject GetRandom(List<GameObject> list){ return list[Random.Range(0, list.Count)]; }
+    public List<GameObject> GetPlatformList() { if(allPlatformList.Count <= 0) SetAllPlatforms(); return allPlatformList; }
+    public List<GameObject> GetBasicPlatformList() { return basicPlatformList; }
     public List<GameObject> GetDetailsList() { return detailsList; }
 }

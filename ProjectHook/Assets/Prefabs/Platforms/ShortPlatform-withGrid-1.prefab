@@ -244,7 +244,7 @@ GameObject:
   - component: {fileID: 2873232010905553105}
   - component: {fileID: 2873232010905553104}
   m_Layer: 0
-  m_Name: Platform-withGrid-4
+  m_Name: ShortPlatform-withGrid-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
