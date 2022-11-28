@@ -24,6 +24,7 @@ public class DeathManager : MonoBehaviour
 
     private void Die()
     {
+        CoinManager.AddCoiins((int)ScoreManager.score / 5);
         GameObject.Find("GameUIManager").GetComponent<GameUIManager>().Death();
     }
 }

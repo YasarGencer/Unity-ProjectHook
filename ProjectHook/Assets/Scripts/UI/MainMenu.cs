@@ -4,14 +4,18 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting.Dependencies.Sqlite;
 
 public class MainMenu : MonoBehaviour
 {
+    public static MainMenu Instance;
     Animator gameAnimator;
 
     public TextMeshProUGUI highMark, lowMark;
     public Slider music, sfx;
     public GameObject postProcessing;
+
+    [SerializeField]private TextMeshProUGUI _coinText;
 
     static string  rateUsURL = "https://play.google.com/store/apps/dev?id=8567089145193331467",
     playStoreURL = "https://play.google.com/store/apps/dev?id=8567089145193331467",
@@ -24,6 +28,7 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
+        Instance = this;
         gameAnimator = GetComponentInParent<Animator>() as Animator;
         GetSelectedGraphics(); 
         GetAudio();
@@ -59,6 +64,7 @@ public class MainMenu : MonoBehaviour
         gameAnimator.SetTrigger("InfoClose");
     }
     public void ShopOpen(){
+        SetCoins();
         gameAnimator.SetTrigger("ShopOpen");
     }
     public void ShopClose(){
@@ -101,5 +107,8 @@ public class MainMenu : MonoBehaviour
     }
     public void OpenUrl(int id){
         Application.OpenURL(this.id[id]);
+    }
+    public void SetCoins() {
+        _coinText.text = CoinManager.GetCoins().ToString();
     }
 }
