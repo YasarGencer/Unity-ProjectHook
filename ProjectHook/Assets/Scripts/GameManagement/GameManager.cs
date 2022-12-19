@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
 
     private FreezeManager freezeManager;
 
+    private Vector2 playerStartPosition;
     private void Start()
     {
         currentGamePhase = GamePhases.PLAYERLOCATES;
@@ -68,43 +69,42 @@ public class GameManager : MonoBehaviour
         if (currentGamePhase == GamePhases.SHOOT)
         {
             arrowMovement.StopRotation();
+            arrowAndRangeDisplay.HideArrowAndRange();
             currentGamePhase = GamePhases.HOOKMOVES;
         }
         //--------------------------------------------------------------
         if (currentGamePhase == GamePhases.HOOKMOVES)
         {
-            arrowAndRangeDisplay.HideArrowAndRange();
             hookMovement.MoveFrom(player.transform);
             if (hookCollideDetector.GetPlatform() != null)
             {
-                hookMovement.StopHook();
                 if (hookCollideDetector.GetPlatform().collider.CompareTag("Platform"))
                 {
                     player.transform.parent = null;
                     hook.transform.parent = null;
-                    currentGamePhase = GamePhases.HOOKHITS;
 
                 }
                 if (hookCollideDetector.GetPlatform().collider.CompareTag("MovingPlatform"))
                 {
                     player.transform.SetParent(hookCollideDetector.GetPlatform().collider.transform);
                     hook.transform.SetParent(hookCollideDetector.GetPlatform().collider.transform);
-                    currentGamePhase = GamePhases.HOOKHITS;
                 }
+                currentGamePhase = GamePhases.HOOKHITS;
             }
         }
         //--------------------------------------------------------------
         if (currentGamePhase == GamePhases.HOOKHITS)
         {
-            
+
             currentGamePhase = GamePhases.PLAYERMOVES;
-            playerMovement.Invoke("StopMoving", playerMovement.moveDuration + 0.01f);
+            playerStartPosition = player.transform.position;
+            playerMovement.Invoke("StopMoving", playerMovement.moveDuration + 0.08f);
         }
         //--------------------------------------------------------------
         if (currentGamePhase == GamePhases.PLAYERMOVES)
         {
-            playerMovement.GoToPlatform(hookCollideDetector.GetPlatform().collider.gameObject, hook);
-
+            //playerMovement.GoToPlatform(hookCollideDetector.GetPlatform().collider.gameObject, hook);
+            playerMovement.MoveToPlatform(hookCollideDetector.GetPlatform().collider.gameObject,playerStartPosition, hook);
         }
         //--------------------------------------------------------------
         if (currentGamePhase == GamePhases.HOOKMISSES)
