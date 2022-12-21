@@ -20,19 +20,22 @@ public class CameraMovement : MonoBehaviour
         playerMovement = player.GetComponent<PlayerMovement>();
         StartCoroutine(Multiplier());
         StartCoroutine(StartSpeed(camSpeed));
-        if(SceneManager.GetActiveScene().buildIndex != 0)
+        if (SceneManager.GetActiveScene().buildIndex != 0)
             gameUIManager = GameObject.Find("GameUIManager").GetComponent<GameUIManager>() as GameUIManager;
     }
     private void Update()
     {
         if (player & DeathManager.isDead != true)
-            if (player.transform.position.y > this.transform.position.y){
+        {
+
+            if (player.transform.position.y > this.transform.position.y)
+            {
                 this.transform.position = new Vector3(this.transform.position.x, player.transform.position.y, this.transform.position.z);
             }
-            else{                
-                transform.Translate(Vector3.up * Time.deltaTime * camSpeed * currentMultiplier);
-            }
-        else{
+            transform.Translate(Vector3.up * Time.deltaTime * camSpeed * currentMultiplier);
+        }
+        else
+        {
             this.transform.position = new Vector3(this.transform.position.x, player.transform.position.y, this.transform.position.z);
         }
     }
@@ -40,13 +43,13 @@ public class CameraMovement : MonoBehaviour
     {
         currentMultiplier *= speedMultiplierAmount;
         yield return new WaitForSecondsRealtime(speedMultiplierTimer);
-        if(camSpeed*currentMultiplier <= maxCamSpeed)
+        if (camSpeed * currentMultiplier <= maxCamSpeed)
             StartCoroutine(Multiplier());
     }
     IEnumerator StartSpeed(float value)
     {
         camSpeed = 0;
-        if(SceneManager.GetActiveScene().name != "Mainmenu")
+        if (SceneManager.GetActiveScene().name != "Mainmenu")
             yield return new WaitForSeconds(2.5f);
         else
             yield return new WaitForSeconds(0);
