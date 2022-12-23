@@ -78,6 +78,7 @@ public class GameManager : MonoBehaviour
             hookMovement.MoveFrom(player.transform);
             if (hookCollideDetector.GetPlatform() != null)
             {
+                currentGamePhase = GamePhases.HOOKHITS;
                 if (hookCollideDetector.GetPlatform().collider.CompareTag("Platform"))
                 {
                     player.transform.parent = null;
@@ -89,7 +90,6 @@ public class GameManager : MonoBehaviour
                     player.transform.SetParent(hookCollideDetector.GetPlatform().collider.transform);
                     hook.transform.SetParent(hookCollideDetector.GetPlatform().collider.transform);
                 }
-                currentGamePhase = GamePhases.HOOKHITS;
             }
         }
         //--------------------------------------------------------------

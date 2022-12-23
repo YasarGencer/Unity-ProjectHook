@@ -16,7 +16,7 @@ public class HookMovement : MonoBehaviour
     {
         transform.Translate(Vector2.up * Time.deltaTime * hookSpeed);
         if (Vector3.Distance(from.position, transform.position) > range)
-            GameManager.currentGamePhase = GameManager.GamePhases.HOOKMISSES;
+            GameManager.currentGamePhase = GameManager.GamePhases.HOOKMISSES;  // SOLID'E UYGUN DEGIL
     }
 
     public void SetPosition(Transform target)
